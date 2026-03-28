@@ -1,0 +1,45 @@
+# Competitive Programming repo ignores
+
+# CP Helper / tooling
+.cph/
+
+# Local IDE settings (uncomment if you want to share VS Code config)
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
+desktop.ini
+
+# Build artifacts / binaries
+*.bin
+*.exe
+*.out
+*.app
+
+# Object / library files
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+
+# Debug symbols
+*.pdb
+*.dSYM/
+
+# CMake / build folders
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+build/
+cmake-build-*/
+
+# Temporary files
+*.log
+*.tmp
+*.swp
+*.swo
