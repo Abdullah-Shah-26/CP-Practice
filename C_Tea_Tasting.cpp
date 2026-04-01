@@ -6,7 +6,7 @@ using namespace std;
 using namespace __gnu_pbds;
 
 // Ordered Set
-#define pbds tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
+#define oset tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
 // order_of_key(k) : No of Elements < k
 // *find_by_order(i) : Value at idx i (0 - based)
 
@@ -102,19 +102,9 @@ bool isPrime(ll n){
     return true;
 }
 
-// ---------- Prefix sum ----------
-vector<ll> prefixSum(const vector<ll>& a){
-    int n=a.size();
-    vector<ll> pref(n+1,0);
-    for(int i=0;i<n;i++) pref[i+1]=pref[i]+a[i];
-    return pref;
-}
-
-// ---------- Newline helper ----------
-inline void nl(){ cout << '\n'; }
-
 // ---------- Macros ----------
 #define rv(a) for(auto &x:(a)) cin>>x
+#define pv(a) do{ for(const auto &x:(a)) cout<<x<<' '; cout<<'\n'; }while(0)
 #define rm(mat) for(auto &r:(mat)) for(auto &x:(r)) cin>>x
 #define all(x) begin(x), end(x)
 #define rall(x) rbegin(x), rend(x)
@@ -125,69 +115,17 @@ inline void nl(){ cout << '\n'; }
 #define eb emplace_back
 #define rep(i,a,b) for(int i=(a);i<(b);++i)
 #define per(i,a,b) for(int i=(b)-1;i>=(a);--i)
+#define nl do{ cout << '\n'; }while(0)
 
 // ---------- Solve ---------
 void solve(){
-    int n;
+    ll n;
     cin >> n;
-    
-    //* Make all 1 based indexed
-    vi a(n + 1);
+    vll a(n), b(n);
+    rv(a);
+    rv(b);
 
-    for(int i = 1;i <= n; i++) cin >> a[i];
-
-    string s;
-    cin >> s;
-    s = "*" + s;
-
-
-               
-
-    int xr0 = 0, xr1 = 0;
-    for(int i = 1; i <= n; i++){
-        if(s[i] == '1'){
-             xr1 ^= a[i];
-        }
-        else{
-            xr0 ^= a[i];
-        }
-    }
-
-    vector<int> prXor(n + 1, 0);
-
-    for(int i = 1; i <= n; i++){
-        prXor[i] = prXor[i - 1] ^ a[i];
-    }
-
-    int q;
-    cin >> q;
-
-    while(q--){
-        int type;
-        cin >> type;
-
-        if(type == 1){
-            int l, r;
-            cin >> l >> r;
-
-            int xorLtoR = prXor[r] ^ prXor[l - 1];
-            xr0 ^= xorLtoR;
-            xr1 ^= xorLtoR;
-        }
-        else if(type == 2){
-            int g;
-            cin >> g;
-
-            if(g == 0){
-                cout << xr0 << ' ';
-            }
-            else if(g == 1){
-                cout << xr1 << ' ';
-            }
-        }
-
-    }
-    cout << endl;
+       
 
 }
 
@@ -196,6 +134,6 @@ int main(){
     int t; 
     cin>>t;
     while(t--)
-        solve();
+    solve();
     return 0;
 }
