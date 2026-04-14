@@ -117,16 +117,146 @@ bool isPrime(ll n){
 #define per(i,a,b) for(int i=(b)-1;i>=(a);--i)
 #define nl do{ cout << '\n'; }while(0)
 
+struct Edge{
+  int u, v;
+};
+
+int n,m;
+vector<Edge> edges;
+vvpi adj;
+
+// Tarjans
+vi low, tin;
+vb isBridge;
+int timer = 0;
+
+// Components
+vi comp, compSize;
+
+// Orientation
+vpi ans;
+vb used;
+
+// Finding bridges
+void dfsBridge(int u, int parentEdge){
+  tin[u] = low[u] = timer++;
+
+  for(auto [v, id] : adj[u]){
+    if(id == parentEdge) continue;
+
+    if(tin[v] == -1){
+      dfsBridge(v, id);
+
+      low[u] = min(low[u], low[v]); // TreeEdge
+
+      if(low[v] > tin[u]) isBridge[id] = true;
+    
+    }
+      else
+      low[u] = min(low[u], tin[v]); // BackEdge
+  }
+}
+
+
+// Build Components
+void dfsComp(int u, int cid){
+  comp[u] = cid;
+  compSize[cid]++;
+
+  for(auto [v, id]: adj[u]){
+    if(comp[v] == -1 && !isBridge[id]){
+      dfsComp(v, cid);
+    }
+  }
+}
+
+vb vis;
+// Orient Edges
+void dfsOrient(int u){
+  vis[u] = 1;
+
+  for(auto [v,id] : adj[u]){
+    if(ans[id].first != -1) continue;
+
+    if(isBridge[id]){
+      ans[id] = {v,u};
+      dfsOrient(v);
+    }
+    else{
+      ans[id] = {u,v};
+      if(!vis[v]){
+        dfsOrient(v);
+      }
+    }
+  }
+}
 // ---------- Solve ---------
 void solve(){
-    
+    cin >> n >> m;
+
+    edges.resize(m);
+    adj.assign(n, {});
+
+    for(int i = 0; i < m; i++){
+      int u,v;
+      cin >> u >> v;
+      --u, --v;
+
+      edges[i] = {u,v};
+      adj[u].push_back({v,i});
+      adj[v].push_back({u,i});
+
+    }
+
+  // Bridges
+  tin.assign(n, -1);
+  low.assign(n, -1);
+  isBridge.assign(m, false);
+  
+  for(int i = 0; i < n; i++){
+    if(tin[i] == -1){
+      dfsBridge(i, -1);
+    }
+  }
+
+  // Components
+  comp.assign(n, -1);
+  compSize.clear();
+
+  for(int i = 0; i < n; i++){
+    if(comp[i] == -1){
+      compSize.push_back(0);
+      dfsComp(i, compSize.size() - 1);
+    }
+  }
+
+  int maxCompIdx = max_element(compSize.begin(), compSize.end()) - compSize.begin();
+
+  int res = compSize[maxCompIdx];
+  // Find node inside largest comp to be root
+  int root = 0;
+  for(int i = 0; i < n; i++){
+    if(comp[i] == maxCompIdx){
+      root = i;
+      break;
+    }
+  }
+
+  ans.assign(m, {-1,-1});
+  vis.assign(n, false);
+
+  dfsOrient(root);
+
+  cout << res <<endl;
+  for(int i = 0; i < m; i++){
+    cout << ans[i].first + 1 << " " << ans[i].second + 1 << endl;
+  }
+
+  return;
 }
 
 // ---------- Main ----------
 int main(){
-    int t; 
-    cin >> t;
-    while(t--)
       solve();
     return 0;
 }

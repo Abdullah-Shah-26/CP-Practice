@@ -119,7 +119,30 @@ bool isPrime(ll n){
 
 // ---------- Solve ---------
 void solve(){
-    
+    ll p,q;
+    cin >> p >> q;
+
+    ll s = 2*p + 4*q + 1;
+
+    for(ll a = 3; a*a <= s; a+=2){
+      if(s%a == 0){
+        ll b = s/a;
+
+        ll n = (a - 1)/2;
+        ll m = (b - 1)/2;
+      
+        ll h = m*(n+1);
+        ll v = n*(m+1);
+
+        if(h >= q && v >= q){
+          cout << n << " " << m << endl;
+          return;
+        }
+      }
+    }
+
+    cout << -1 << endl;
+    return;
 }
 
 // ---------- Main ----------

@@ -119,7 +119,27 @@ bool isPrime(ll n){
 
 // ---------- Solve ---------
 void solve(){
-    
+    int n;
+    cin >> n;
+
+    vi a(n);
+    set<int> unique;
+
+    for(int i = 0; i < n; i++){
+      cin >> a[i];
+      unique.insert(a[i]);
+    }
+
+    if(unique.size() < n) { // have duplicates
+      cout << -1 << endl;
+      return;
+    }
+
+    sort(rall(a));
+
+    pv(a);
+
+    return;
 }
 
 // ---------- Main ----------

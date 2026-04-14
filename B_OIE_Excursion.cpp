@@ -119,7 +119,35 @@ bool isPrime(ll n){
 
 // ---------- Solve ---------
 void solve(){
-    
+    int n,m;
+    cin >> n >> m;
+
+    vi a(n);
+    rv (a);
+
+    int maxC = 1;
+    int curC = 1;
+
+    for(int i = 1; i < n; i++){
+      if(a[i] == a[i-1]){
+        curC++;
+      }
+      else{
+        curC = 1;
+      }
+
+      maxC = max(maxC, curC);
+    }
+
+    if(maxC >= m){
+      cout << "NO\n";
+    }
+    else{
+      cout << "YES\n";
+    }
+
+  
+    return;
 }
 
 // ---------- Main ----------
