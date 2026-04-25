@@ -117,102 +117,140 @@ bool isPrime(ll n){
 #define per(i,a,b) for(int i=(b)-1;i>=(a);--i)
 #define nl do{ cout << '\n'; }while(0)
 
-ll n,m,target;
-
-ll dp[101][101][101]; // dp[idx][target][prev]
-
-ll solve(ll i, ll tar, ll prev, vll &houses, vvll &cost){
-  
-  if(i == n)
-    return tar == 0 ? 0 : LINF;
-
-  if(tar < 0)
-    return LINF;
-
-  if(dp[i][tar][prev] != -1)
-    return dp[i][tar][prev];
-
-  // Already Colored
-  if(houses[i] != 0)  
-    return dp[i][tar][prev] = solve(i + 1, tar - (prev != houses[i]), houses[i], houses, cost);
-
-  ll res = LINF;
-
-  for(int col = 1; col <= m; col++){
-    res = min(res, cost[i][col - 1] + solve(i + 1, tar - (prev != col), col, houses, cost));
-  }
-
-  return dp[i][tar][prev] = res;
-}
-
 // ---------- Solve ---------
-void solve(){
-  cin >> n >> m >> target;
+/* void solve(){
+  ll n;
+  cin >> n;
+  vll a(n);
+  rv(a);
 
-  vll houses(n);
-  rv(houses);
+  const int MAXA = 200000;
 
-  vvll cost(n, vll(m, 0));
+  vi spf;
+  linearSieve(MAXA, spf);
 
-  for(int i = 0; i < n; i++){
-    for(int j = 0; j < m; j++){
-      cin >> cost[i][j];
+  vi cnt(MAXA + 1, 0);
+  vi mini1(MAXA + 1, INF), mini2(MAXA + 1, INF);
+
+  for(int x : a){
+    unordered_map<int, int> f;
+
+    // Factorizing x 
+    while(x > 1){
+      int p = spf[x];
+      int c = 0;
+
+      while(x % p == 0){
+        x/= p;
+        c++;
+      }
+
+      f[p] += c;
     }
-  }
 
-  memset(dp, -1, sizeof(dp));
+    // update ? what ? prime, exponent
+    for(auto &[p, e] : f){
+      cnt[p]++; // how many no's contain this prime
 
-  // vector<vector<vector<ll>>> dp(n + 1, vector<vector<ll>> (target + 1, vector<ll> (m + 1, LINF)));
-  vector<vector<ll>> next(target + 1, vector<ll> (m + 1, LINF));
-  vector<vector<ll>> cur(target + 1, vector<ll> (m + 1, LINF));
-
-
-  for(int prev = 0; prev <= m; prev++){
-    next[0][prev] = 0;
-  }
-
-  for(int i = n-1; i >= 0; i--){
-    
-    for(auto &row : cur){
-      fill(row.begin(), row.end(), LINF);
-    }
-
-    for(int t = 0; t <= target; t++){
-      for(int prev = 0; prev <= m; prev++){
-
-        if(houses[i] != 0){
-          int T = t - (prev != houses[i]);
-
-          if(T >= 0)
-            cur[t][prev] = next[T][houses[i]];
-        }
-        else{
-          ll res = LINF;
-
-          for(int col = 1; col <= m; col++){
-            int T = t - (prev != col); 
-
-            if(T >= 0)
-              res = min(res, cost[i][col - 1] + next[T][col]);
-          }
-
-          cur[t][prev] = res;
-        }
+      // Finding smallest & 2nd smallest
+      if(e < mini1[p]){
+        mini2[p] = mini1[p];
+        mini1[p] = e;
+      }
+      else if(e < mini2[p]){
+        mini2[p] = e;
       }
     }
-    next = cur;
   }
 
-  // ll res = solve(0, target, 0, houses, cost);
+  ll ans = 1;
 
-  ll res = next[target][0];
+  for(int p = 2; p <= MAXA; p++){
+    if(cnt[p] == n){
+      // This prime appeared in all n no's
+      for(int i = 0; i < mini2[p]; i++){
+        ans *= p;
+      }
+    }
+    else if(cnt[p] == n-1){
+      // Appeared in n-1  no's
+      for(int i = 0; i < mini1[p]; i++){
+        ans *= p;
+      }
+    }
+  }
 
-  if(res == LINF)
-    cout << -1 << endl;
-  else  
-    cout << res << endl;
+  cout << ans << endl;
+} */
+
+void solve(){
+  int n;
+  cin >> n;
+
+  vi a(n);
+  for(int &x : a)
+    cin >> x;
+
+  const int MAXA = 200000;
+
+  vi spf;
+  linearSieve(MAXA, spf);
+
+  vvi expo(MAXA + 1);
+
+  rep(i,0,n){
+    int x = a[i];
+
+    unordered_map<int,int> f;
+    
+    while(x > 1){
+      int p = spf[x];
+      int c = 0;
+
+      while(x % p == 0){
+        x /= p;
+        c++;
+      }
+
+      f[p] += c;
+    }
+
+    for(auto &[p,e] : f){
+      expo[p].pb(e);
+    }
+  }
+
+  ll ans = 1;
+
+  for(int p = 2; p <= MAXA; p++){
+    
+    if(expo[p].empty()) continue;
+
+    while((int)expo[p].size() < n){
+      expo[p].pb(0);
+    }
+
+    int mn1 = INF, mn2 = INF;
   
-  return;
+    for(int e : expo[p]){
+      if(e < mn1){
+        mn2 = mn1;
+        mn1 = e;
+      }
+      else if(e < mn2){
+        mn2 = e;
+      }
+    }
+
+    int exponent = mn2; // Biggest of 2 smallest exponent
+
+    for(int i = 0; i < exponent; i++){
+      ans *= p;
+    }
+  }
+
+
+  cout << ans << endl;
 }
 
 // ---------- Main ----------

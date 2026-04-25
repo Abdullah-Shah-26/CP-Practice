@@ -117,109 +117,21 @@ bool isPrime(ll n){
 #define per(i,a,b) for(int i=(b)-1;i>=(a);--i)
 #define nl do{ cout << '\n'; }while(0)
 
-ll n,m,target;
-
-ll dp[101][101][101]; // dp[idx][target][prev]
-
-ll solve(ll i, ll tar, ll prev, vll &houses, vvll &cost){
-  
-  if(i == n)
-    return tar == 0 ? 0 : LINF;
-
-  if(tar < 0)
-    return LINF;
-
-  if(dp[i][tar][prev] != -1)
-    return dp[i][tar][prev];
-
-  // Already Colored
-  if(houses[i] != 0)  
-    return dp[i][tar][prev] = solve(i + 1, tar - (prev != houses[i]), houses[i], houses, cost);
-
-  ll res = LINF;
-
-  for(int col = 1; col <= m; col++){
-    res = min(res, cost[i][col - 1] + solve(i + 1, tar - (prev != col), col, houses, cost));
-  }
-
-  return dp[i][tar][prev] = res;
-}
-
 // ---------- Solve ---------
 void solve(){
-  cin >> n >> m >> target;
+    int n;
+    cin >> n;
+    vll a(n);
+    rv(a);
 
-  vll houses(n);
-  rv(houses);
-
-  vvll cost(n, vll(m, 0));
-
-  for(int i = 0; i < n; i++){
-    for(int j = 0; j < m; j++){
-      cin >> cost[i][j];
-    }
-  }
-
-  memset(dp, -1, sizeof(dp));
-
-  // vector<vector<vector<ll>>> dp(n + 1, vector<vector<ll>> (target + 1, vector<ll> (m + 1, LINF)));
-  vector<vector<ll>> next(target + 1, vector<ll> (m + 1, LINF));
-  vector<vector<ll>> cur(target + 1, vector<ll> (m + 1, LINF));
-
-
-  for(int prev = 0; prev <= m; prev++){
-    next[0][prev] = 0;
-  }
-
-  for(int i = n-1; i >= 0; i--){
     
-    for(auto &row : cur){
-      fill(row.begin(), row.end(), LINF);
-    }
-
-    for(int t = 0; t <= target; t++){
-      for(int prev = 0; prev <= m; prev++){
-
-        if(houses[i] != 0){
-          int T = t - (prev != houses[i]);
-
-          if(T >= 0)
-            cur[t][prev] = next[T][houses[i]];
-        }
-        else{
-          ll res = LINF;
-
-          for(int col = 1; col <= m; col++){
-            int T = t - (prev != col); 
-
-            if(T >= 0)
-              res = min(res, cost[i][col - 1] + next[T][col]);
-          }
-
-          cur[t][prev] = res;
-        }
-      }
-    }
-    next = cur;
-  }
-
-  // ll res = solve(0, target, 0, houses, cost);
-
-  ll res = next[target][0];
-
-  if(res == LINF)
-    cout << -1 << endl;
-  else  
-    cout << res << endl;
-  
-  return;
 }
 
 // ---------- Main ----------
 int main(){
-    // int t; 
-    // cin >> t;
-    // while(t--)
+    int t; 
+    cin >> t;
+    while(t--)
       solve();
     return 0;
 }
