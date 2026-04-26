@@ -121,17 +121,45 @@ bool isPrime(ll n){
 void solve(){
     int n;
     cin >> n;
-    vll a(n);
-    rv(a);
+    vi a(n);
+    rv (a);
 
-    
+    int g = a[0];
+    int cnt = 0;
+
+    for(auto i : a){
+      g = gcd(g,i);
+      if(i == 1)
+        cnt++;
+    }
+
+    if(g > 1){
+      cout << -1 << '\n';
+      return;
+    }
+
+    if(cnt > 0){
+      cout << n - cnt << endl;
+      return;
+    }
+
+    int ans = INF;
+    for(int l = 0; l < n; l++){
+      int g = a[l];
+      for(int r = l + 1; r < n; r++){
+        g = gcd(a[l], a[r]);
+
+        if(g == 1){
+          ans = min(ans, (r-l+1)-1 + (n-1)); // -1 for the 1 we replaced + (n-1) ops for remaining elements to overwrite them to 1
+        }
+      }
+    }
+
+    ans == INF ? cout << -1 << endl : cout << ans << endl;
 }
 
 // ---------- Main ----------
 int main(){
-    int t; 
-    cin >> t;
-    while(t--)
       solve();
     return 0;
 }
