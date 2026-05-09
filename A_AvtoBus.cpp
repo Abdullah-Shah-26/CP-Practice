@@ -108,28 +108,16 @@ bool isPrime(ll n){
 
 // ---------- Solve ---------
 void solve(){
-    int n;
+    ll n;
     cin >> n;
 
-    vi a(n);
-    rv(a);
-
-    ll cnt = 0;
-
-    for(int i = n-2; i >= 0; i--){
-      
-      while(a[i] > 0 && a[i] >= a[i+1]){
-        a[i] = a[i]/2;
-        cnt++;
-      }
-
-      if(a[i] == a[i+1]) {
-        cout << -1 << endl;
-        return;
-      }
+    if(n < 4 || (n % 2)) {
+      cout << -1;
+      nl;
+      return;
     }
 
-    cout << cnt << endl;
+    cout << (n + 5)/6  << " " << n/4 << endl;
 }
 
 // ---------- Main ----------

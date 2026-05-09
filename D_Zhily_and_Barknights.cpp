@@ -28,7 +28,7 @@ using vvpi = vector<vector<pi>>;
 // ---------- Constants ----------
 const int INF = 1e9;
 const ll LINF = 1e18;
-const int MOD = 1e9 + 7;
+const int MOD = 998244353;
 
 // ---------- Fast IO ----------
 static const auto fastio = [](){
@@ -109,27 +109,13 @@ bool isPrime(ll n){
 // ---------- Solve ---------
 void solve(){
     int n;
-    cin >> n;
+    cin >> n; 
 
-    vi a(n);
+    vi a(n), b(n);
+
     rv(a);
+    rv(b);
 
-    ll cnt = 0;
-
-    for(int i = n-2; i >= 0; i--){
-      
-      while(a[i] > 0 && a[i] >= a[i+1]){
-        a[i] = a[i]/2;
-        cnt++;
-      }
-
-      if(a[i] == a[i+1]) {
-        cout << -1 << endl;
-        return;
-      }
-    }
-
-    cout << cnt << endl;
 }
 
 // ---------- Main ----------
