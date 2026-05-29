@@ -57,61 +57,44 @@ static const auto fastio = [](){
 #define per(i,a,b) for(int i=(b)-1;i>=(a);--i)
 #define endl '\n'
 
-const int N = 2e5 + 20;
-int n;
-
-int dp[N];
-vector<pii> adj[N];
-
-void dfs1(int u, int p){
-  for(auto [v, w] : adj[u]){
-    if(v == p) continue;
-    dfs1(v, u);
-    dp[u] += dp[v] + w;
-  }
-}
-
-void dfs2(int u, int p){
-  
-  for(auto [v, w] : adj[u]){
-    if(v == p) continue;
-    
-    dp[v] = dp[u] + (!w ? 1 : -1);
-    dfs2(v, u);
-  }
-}
-
 // ---------- Solve ---------
 void solve(){
-  cin >> n;
-  for(int i = 0; i < n-1; i++){
-    int u,v;
-    cin >> u >> v;
-    u--,v--;
+  int n,q;
+  cin >> n >> q;
 
-    adj[u].pb({v,0}); // Given edge
-    adj[v].pb({u,1}); // Our edge, So we need 1 operation to change direction 
-  }
+  string s;
+  cin >> s;
 
-  dfs1(0, -1);
-  dfs2(0, -1);
+  const vector<string> patterns = {
+    "abc",
+    "acb",
+    "bac",
+    "bca",
+    "cab",
+    "cba"
+  };
 
-  int mini = *min_element(dp, dp + n);
-  
-  vi ans;
-  for(int i = 0; i < n; i++){
-    if(dp[i] == mini){
-      ans.pb(i);
+  vector<vector<int>> dp(6, vector<int> (n + 1));
+
+  for(int p = 0; p < 6; p++){
+    for(int i = 0; i < n; i++){
+      dp[p][i+1] = dp[p][i];
+
+      if(s[i] != patterns[p][i%3])
+        dp[p][i+1]++;
     }
   }
-  
-  cout << mini << endl;
- 
-  for(int x : ans)
-    cout << x + 1 << endl;
 
+  while(q--){
+    int l, r;
+    cin >> l >> r;
 
-  cout << endl;
+    int ans = n;
+    for(int p = 0; p < 6; p++)
+      ans = min(ans, dp[p][r] - dp[p][l-1]);
+
+    cout << ans << endl;
+  }
 }
 
 // ---------- Main ----------

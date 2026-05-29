@@ -28,7 +28,7 @@ using vpll = vector<pll>;
 using vvpll = vector<vector<pll>>;
 
 // ---------- Constants ----------
-const int INF = 1e9;
+const ll INF = 1e18;
 const ll LINF = 1e18;
 const int MOD = 1e9 + 7;
 

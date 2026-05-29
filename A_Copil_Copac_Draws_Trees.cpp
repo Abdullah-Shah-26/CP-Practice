@@ -57,8 +57,53 @@ static const auto fastio = [](){
 #define endl '\n'
 
 // ---------- Solve ---------
+
+int n;
+vvi adj;
+vi dp;
+map<pair<int,int>,int> mp;
+
+void dfs(int u, int p){
+  for(auto v : adj[u]){
+    if(v == p) 
+      continue;
+
+    if(mp[{p, u}] < mp[{v, u}]){
+      dp[v] = dp[u];
+    }
+    else{
+      dp[v] = 1 + dp[u];
+    }
+
+    dfs(v, u);
+  }
+}
+
 void solve(){
-  
+  cin >> n;
+  adj.assign(n, {});
+  dp.assign(n, 0);
+  mp.clear();
+
+  for(int i = 0; i < n-1; i++){
+    int u,v;
+    cin >> u >> v;
+    u--,v--;
+   
+    mp[{u,v}] = i;
+    mp[{v,u}] = i;
+
+    adj[u].pb(v);
+    adj[v].pb(u);
+    
+  }
+
+  mp[{-1,0}] = -1;
+  dp[0] = 1;
+
+  dfs(0, -1);
+
+  cout << *max_element(all(dp)) << endl;
 }
 
 // ---------- Main ----------

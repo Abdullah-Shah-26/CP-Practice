@@ -57,65 +57,51 @@ static const auto fastio = [](){
 #define per(i,a,b) for(int i=(b)-1;i>=(a);--i)
 #define endl '\n'
 
-const int N = 2e5 + 20;
-int n;
-
-int dp[N];
-vector<pii> adj[N];
-
-void dfs1(int u, int p){
-  for(auto [v, w] : adj[u]){
-    if(v == p) continue;
-    dfs1(v, u);
-    dp[u] += dp[v] + w;
-  }
-}
-
-void dfs2(int u, int p){
-  
-  for(auto [v, w] : adj[u]){
-    if(v == p) continue;
-    
-    dp[v] = dp[u] + (!w ? 1 : -1);
-    dfs2(v, u);
-  }
-}
-
 // ---------- Solve ---------
 void solve(){
+  ll n;
   cin >> n;
-  for(int i = 0; i < n-1; i++){
-    int u,v;
-    cin >> u >> v;
-    u--,v--;
 
-    adj[u].pb({v,0}); // Given edge
-    adj[v].pb({u,1}); // Our edge, So we need 1 operation to change direction 
+  vll wt(n + 1);
+  for(int i = 1; i <= n; i++){
+    cin >> wt[i];
   }
 
-  dfs1(0, -1);
-  dfs2(0, -1);
+  vvll adj(n + 1);
+  for(int i = 0; i < n-1; i++){
+    ll u,v;
+    cin >> u >> v;
+    adj[u].pb(v);
+    adj[v].pb(u);
+  }
 
-  int mini = *min_element(dp, dp + n);
-  
-  vi ans;
-  for(int i = 0; i < n; i++){
-    if(dp[i] == mini){
-      ans.pb(i);
+  vll vec;
+  ll val = 0;
+
+  for(int i = 1; i <= n; i++){
+    val += wt[i];
+    ll sz = adj[i].size();
+    for(int j = 0; j < sz - 1; j++){
+      vec.push_back(wt[i]);
     }
   }
-  
-  cout << mini << endl;
- 
-  for(int x : ans)
-    cout << x + 1 << endl;
 
+  sort(rall(vec));
 
+  cout << val << " "; // For k = 1
+
+  for(auto i : vec){
+    val += i;
+    cout << val << " ";
+  }
   cout << endl;
 }
 
 // ---------- Main ----------
 int main(){
+  int t; 
+  cin >> t;
+  while(t--)
     solve();
   return 0;
 }
