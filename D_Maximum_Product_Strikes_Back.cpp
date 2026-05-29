@@ -56,9 +56,129 @@ static const auto fastio = [](){
 #define per(i,a,b) for(int i=(b)-1;i>=(a);--i)
 #define endl '\n'
 
+int cntTwos(vi &a, int l, int r){
+  int cnt = 0;
+
+  for(int i = l; i <= r; i++){
+    if(abs(a[i]) == 2)
+      cnt++;
+  }
+
+  return cnt;
+}
+
 // ---------- Solve ---------
 void solve(){
-  
+  int n;
+  cin >> n;
+
+  vi a(n);
+  rv(a);
+
+  // Best ans : 
+  // Remove x from front
+  // Remove y from back
+
+  int bestFront = n;
+  int bestBack = 0;
+
+  // Max |2|'s
+  int bestTwos = 0;
+
+  int i = 0;
+  while(i < n){
+
+    while(i < n && a[i] == 0) 
+      i++;
+
+    if(i >= n)
+      break;
+
+    int L = i;
+
+    while(i < n && a[i] != 0)
+      i++;
+
+    int R = i - 1;
+
+    // Zero Free Segment
+    // seg[L.....R]
+    int negCnt = 0;
+    int firstNeg = -1, lastNeg = -1;
+
+    for(int j = L; j <= R; j++){
+       if(a[j] < 0){
+        negCnt++;
+
+        if(firstNeg == -1)
+          firstNeg = j;
+
+        lastNeg = j;
+      }
+    }
+
+    // Case 1 : 
+    // Even -ve's : Take Whole seg-> since it becomes +ve
+    if(negCnt % 2 == 0){
+      int twos = cntTwos(a, L, R);
+
+      if(twos > bestTwos){
+        bestTwos = twos;
+
+        bestFront = L;
+        bestBack = n - R - 1;
+      }
+    }
+
+    // Case 2 :
+    // Odd -ve's : 
+    // Try 
+    // Remove pref till first -ve
+    // Remove suff till last -ve
+    else{
+
+      // Option 1 : 
+      // Remove left uptil first -ve
+      // Remaining = [firstNeg + 1 .......R]
+      {
+        int newL = firstNeg + 1;
+        int newR = R;
+
+        if(newL <= newR){
+          int twos = cntTwos(a, newL, newR);
+
+          if(twos > bestTwos){
+            bestTwos = twos;
+
+            bestFront = newL;
+            bestBack = n - newR - 1;
+          }
+        }
+      }
+
+      // Option 2 : 
+      // Remove right uptil last -ve 
+      // Remaining = [L..... lastNeg - 1]
+      {
+        int newL = L;
+        int newR = lastNeg - 1;
+
+        if(newL <= newR){
+          int twos = cntTwos(a, newL, newR);
+
+          if(twos > bestTwos){
+            bestTwos = twos;
+
+            bestFront = newL;
+            bestBack = n - newR - 1;
+          }
+        }
+      }
+    }
+  }
+
+  cout << bestFront << " " << bestBack << endl;
+  return;
 }
 
 // ---------- Main ----------
