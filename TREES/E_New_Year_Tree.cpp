@@ -62,110 +62,128 @@ static const auto fastio = []() {
 #define per(i, a, b) for (int i = (b) - 1; i >= (a); --i)
 #define endl '\n'
 
-const int MAXN = 200005;
-const int LOG = 20;
+const int N = 400005;
 
-vi adj[MAXN];
-int up[MAXN][LOG];
-int depth[MAXN];
+vi adj[N];
+ll color[N];
+ll euler[N];
 
-void dfs(int u, int p, int d) {
-  depth[u] = d;
-  up[u][0] = p;  // assigning immediate parent
+ll in[N], out[N];
+ll timer = 0;
 
-  rep(i, 1, LOG) { up[u][i] = up[up[u][i - 1]][i - 1]; }
+ll seg[4 * N];
+ll lazy[4 * N];
+
+void dfs(int u, int p) {
+  in[u] = ++timer;
+
+  euler[timer] = (1LL << color[u]);
 
   for (int v : adj[u]) {
     if (v != p) {
-      dfs(v, u, d + 1);
-    }
-  }
-}
-
-int kthAncestor(int u, int k) {
-  for (int j = 0; j < LOG; j++) {
-    if (k & (1 << j)) u = up[u][j];
-  }
-  return u;
-}
-
-int LCA(int u, int v) {
-  if (depth[u] < depth[v]) swap(u, v);
-
-  u = kthAncestor(u, depth[u] - depth[v]);
-
-  if (u == v) return u;
-
-  per(i, LOG, 0) {
-    if (up[u][i] != up[v][i]) {
-      u = up[u][i];
-      v = up[v][i];
+      dfs(v, u);
     }
   }
 
-  return up[u][0];
+  out[u] = timer;
 }
 
-int dist(int u, int v) { return depth[u] + depth[v] - 2 * depth[LCA(u, v)]; }
+void push(int i, int l, int r) {
+  if (lazy[i] != 0) {
+    seg[i] = lazy[i];
+
+    if (l != r) {
+      lazy[2 * i] = lazy[i];
+      lazy[2 * i + 1] = lazy[i];
+    }
+
+    lazy[i] = 0;
+  }
+}
+
+void build(int i, int l, int r) {
+  lazy[i] = 0;
+  if (l == r) {
+    seg[i] = euler[l];
+    return;
+  }
+
+  int mid = (l + r) >> 1;
+  build(2 * i, l, mid);
+  build(2 * i + 1, mid + 1, r);
+
+  seg[i] = seg[2 * i] | seg[2 * i + 1];
+}
+
+void update(int i, int l, int r, int ql, int qr, ll newMask) {
+  push(i, l, r);
+
+  if (l > qr || r < ql) return;
+
+  if (l >= ql && r <= qr) {
+    lazy[i] = newMask;
+    push(i, l, r);
+    return;
+  }
+
+  int mid = (l + r) >> 1;
+  update(2 * i, l, mid, ql, qr, newMask);
+  update(2 * i + 1, mid + 1, r, ql, qr, newMask);
+
+  seg[i] = seg[2 * i] | seg[2 * i + 1];
+}
+
+ll query(int i, int l, int r, int ql, int qr) {
+  push(i, l, r);
+
+  if (l > qr || r < ql) return 0;
+
+  if (l >= ql && r <= qr) return seg[i];
+
+  int mid = (l + r) >> 1;
+  return query(2 * i, l, mid, ql, qr) | query(2 * i + 1, mid + 1, r, ql, qr);
+}
 
 void solve() {
-  int k;
-  cin >> k;
+  int n, q;
+  cin >> n >> q;
 
-  vi nodes(k);
-  rv(nodes);
+  for (int i = 1; i <= n; i++) cin >> color[i];
 
-  // Finding diameter end points
-  int src = nodes[0];
-
-  int A = src;
-  int mx = -1;
-
-  for (int x : nodes) {
-    int d = dist(A, x);
-    if (d > mx) {
-      mx = d;
-      A = x;
-    }
-  }
-
-  int B = A;
-  mx = -1;
-
-  for (int x : nodes) {
-    int d = dist(A, x);
-    if (d > mx) {
-      mx = d;
-      B = x;
-    }
-  }
-
-  for (int x : nodes) {
-    if (dist(A, x) + dist(x, B) != dist(A, B)) {
-      NO;
-      return;
-    }
-  }
-  YES;
-}
-
-int main() {
-  int n;
-  cin >> n;
-
-  rep(i, 0, n - 1) {
+  for (int i = 0; i < n - 1; i++) {
     int u, v;
     cin >> u >> v;
+
     adj[u].pb(v);
     adj[v].pb(u);
   }
 
-  dfs(1, 1, 0);
+  dfs(1, 0);
 
-  int q;
-  cin >> q;
+  build(1, 1, n);
 
   while (q--) {
+    int type;
+    cin >> type;
+
+    if (type == 1) {
+      int v, c;
+      cin >> v >> c;
+      update(1, 1, n, in[v], out[v], (1LL << c));
+    } else {
+      int v;
+      cin >> v;
+      ll mask = query(1, 1, n, in[v], out[v]);
+      cout << __builtin_popcountll(mask) << endl;
+    }
+  }
+}
+
+int main() {
+  int t = 1;
+  // cin >> t;
+
+  while (t--) {
     solve();
   }
 

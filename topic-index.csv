@@ -1,0 +1,315 @@
+file,folder,reason
+E_Tree_Queries.cpp,BINARY_LIFTING,ancestor jumping
+G_2_Passable_Paths_hard_version.cpp,BINARY_LIFTING,ancestor jumping
+A_Binary_Search.cpp,BINARY_SEARCH,binary search / bound query
+B_Closest_to_the_Left.cpp,BINARY_SEARCH,binary search / bound query
+B_Splitting_an_Array.cpp,BINARY_SEARCH,binary search / bound query
+C_Array_Game.cpp,BINARY_SEARCH,binary search / bound query
+C_Closest_to_the_Right.cpp,BINARY_SEARCH,binary search / bound query
+C_Cows_in_Stalls.cpp,BINARY_SEARCH,binary search / bound query
+C_Keshi_Is_Throwing_a_Party.cpp,BINARY_SEARCH,binary search / bound query
+C_Tea_Tasting.cpp,BINARY_SEARCH,binary search / bound query
+C_To_Become_Max.cpp,BINARY_SEARCH,binary search / bound query
+C_Very_Easy_Task.cpp,BINARY_SEARCH,binary search / bound query
+D_Children_Holiday.cpp,TREES,tree dfs / parent-subtree
+D_Fast_search.cpp,BINARY_SEARCH,binary search / bound query
+D_Jumping_Through_Segments.cpp,BINARY_SEARCH,binary search / bound query
+D_Minimum_maximum_on_the_Path.cpp,TREES,tree dfs / parent-subtree
+D_Reset_K_Edges.cpp,TREES,tree dfs / parent-subtree
+E_Building_an_Aquarium.cpp,BINARY_SEARCH,binary search / bound query
+E_Tracking_Segments.cpp,BINARY_SEARCH,binary search / bound query
+F_String_Game.cpp,BINARY_SEARCH,binary search / bound query
+F_Zhily_and_Cycle.cpp,BINARY_SEARCH,binary search / bound query
+G_1_Dances_Easy_version.cpp,BINARY_SEARCH,binary search / bound query
+H_Hamburgers.cpp,BINARY_SEARCH,binary search / bound query
+Maximize_the_Gap.cpp,BINARY_SEARCH,binary search / bound query
+Sushi.cpp,BINARY_SEARCH,binary search / bound query
+Tallest_at_the_Moment.cpp,BINARY_SEARCH,binary search / bound query
+A_Another_Popcount_Problem.cpp,BITWISE,xor / bit operations
+A_We_Need_the_Zero.cpp,BITWISE,xor / bit operations
+C_Nim_Game_Is_XOR_Game.cpp,BITWISE,xor / bit operations
+D_XOR_Expression_and_Two_Binary_Numbers.cpp,BITWISE,xor / bit operations
+E_Data_Structures_Fan.cpp,BITWISE,xor / bit operations
+E_The_67_th_XOR_Problem.cpp,BITWISE,xor / bit operations
+A_Marisa_Steals_Reimu_s_Takeout.cpp,COMBINATORICS,counting / permutations
+B_Crimson_Triples.cpp,COMBINATORICS,counting / permutations
+B_Luntik_and_Subsequences.cpp,COMBINATORICS,counting / permutations
+G_1_Subsequence_Addition_Easy_Version.cpp,COMBINATORICS,counting / permutations
+G_2_Subsequence_Addition_Hard_Version.cpp,COMBINATORICS,counting / permutations
+A_Copil_Copac_Draws_Trees.cpp,TREES,tree dfs / parent-subtree
+A_Parsa_s_Humongous_Tree.cpp,TREES,tree dfs / parent-subtree
+B_Kavi_on_Pairing_Duty.cpp,DP,dp / memoization
+B_Minimum_Average_Path.cpp,TREES,tree dfs / parent-subtree
+C_Baby_Ehab_Partitions_Again.cpp,DP,dp / memoization
+C_Moamen_and_XOR.cpp,DP,dp / memoization
+C_Mortal_Kombat_Tower.cpp,DP,dp / memoization
+C_Planar_Reflections.cpp,DP,dp / memoization
+C_Yarik_and_Array.cpp,DP,dp / memoization
+Celester.cpp,DP,dp / memoization
+D_Choosing_Capital_for_Treeland.cpp,TREES,tree dfs / parent-subtree
+D_Drunken_Maze.cpp,DP,dp / memoization
+D_Make_Them_Equal.cpp,DP,dp / memoization
+D_Say_No_to_Palindromes.cpp,DP,dp / memoization
+E_Block_Sequence.cpp,DP,dp / memoization
+E_Friendly_Gifts.cpp,DP,dp / memoization
+F_Simple_Cycles_Edges.cpp,TREES,tree dfs / parent-subtree
+G_Natlan_Exploring.cpp,DP,dp / memoization
+H_A_B_Knapsack.cpp,DP,dp / memoization
+A_Disjoint_Sets_Union.cpp,DSU,union find
+B_Disjoint_Sets_Union_2.cpp,DSU,union find
+C_Experience.cpp,DSU,union find
+Drop_Blocks.cpp,FENWICK_TREE,fenwick / i += i & -i
+A_Grasshopper_on_a_Line.cpp,GEOMETRY,coordinates / lines
+A_Packing_Rectangles.cpp,GEOMETRY,coordinates / lines
+B_Different_Distances.cpp,GEOMETRY,coordinates / lines
+B_Meeting_on_the_Line.cpp,GEOMETRY,coordinates / lines
+C_Arrange_the_Numbers_in_a_Circle.cpp,GEOMETRY,coordinates / lines
+C_Line_Empire.cpp,GEOMETRY,coordinates / lines
+D_Distance_in_Tree.cpp,TREES,tree dfs / parent-subtree
+D_Fixed_Point_Guessing.cpp,GEOMETRY,coordinates / lines
+Not_Covered_Points.cpp,GEOMETRY,coordinates / lines
+C_Ciel_the_Commander.cpp,GRAPH,graph traversal / shortest path
+C_Fire_Again.cpp,GRAPH,graph traversal / shortest path
+D_13_th_Labour_of_Heracles.cpp,GRAPH,graph traversal / shortest path
+D_2_doors.cpp,GRAPH,graph traversal / shortest path
+D_Lunar_New_Year_and_a_Wander.cpp,GRAPH,graph traversal / shortest path
+D_Police_Stations.cpp,GRAPH,graph traversal / shortest path
+D_Valid_BFS.cpp,GRAPH,graph traversal / shortest path
+Gift.cpp,GRAPH,graph traversal / shortest path
+Roads_and_Gates.cpp,GRAPH,graph traversal / shortest path
+16_9.cpp,GREEDY,sorting / selection
+A_AI_Project_Development.cpp,GREEDY,sorting / selection
+A_Another_Puzzle_from_Papyrus.cpp,GREEDY,sorting / selection
+A_Array_Coloring.cpp,GREEDY,sorting / selection
+A_Blocked.cpp,GREEDY,sorting / selection
+A_Convergence.cpp,GREEDY,sorting / selection
+A_Doremy_s_Paint_3.cpp,GREEDY,sorting / selection
+A_Euclid_Sequence_and_Two_Numbers.cpp,GREEDY,sorting / selection
+A_Forbidden_Integer.cpp,GREEDY,sorting / selection
+A_Get_together.cpp,GREEDY,sorting / selection
+A_Jellyfish_and_Undertale.cpp,GREEDY,sorting / selection
+A_k_Amazing_Numbers.cpp,GREEDY,sorting / selection
+A_Mainak_and_Array.cpp,GREEDY,sorting / selection
+A_New_Year_Transportation.cpp,GREEDY,sorting / selection
+A_Optimal_Purchase.cpp,GREEDY,sorting / selection
+A_Powered_Addition.cpp,GREEDY,sorting / selection
+A_The_67_th_Integer_Problem.cpp,GREEDY,sorting / selection
+A_The_Equalizer.cpp,GREEDY,sorting / selection
+Accomplice.cpp,GREEDY,sorting / selection
+Alternating_Costs.cpp,GREEDY,sorting / selection
+Armor.cpp,GREEDY,sorting / selection
+B_2_D_Traveling.cpp,GREEDY,sorting / selection
+B_AGAGA_XOOORRR.cpp,GREEDY,sorting / selection
+B_AI_Finds_Nothing_Here.cpp,GREEDY,sorting / selection
+B_Array_Cloning_Technique.cpp,GREEDY,sorting / selection
+B_Array_Walk.cpp,GREEDY,sorting / selection
+B_Bogosort.cpp,GREEDY,sorting / selection
+B_Cake_Leveling.cpp,GREEDY,sorting / selection
+B_Kalindrome_Array.cpp,GREEDY,sorting / selection
+B_Make_AP.cpp,GREEDY,sorting / selection
+B_NIT_Destroys_the_Universe.cpp,GREEDY,sorting / selection
+B_Not_Dividing.cpp,GREEDY,sorting / selection
+B_OIE_Excursion.cpp,GREEDY,sorting / selection
+B_Remilia_Plays_Soku.cpp,GREEDY,sorting / selection
+B_The_67_th_6_7_Integer_Problem.cpp,GREEDY,sorting / selection
+B_The_Meeting_Place_Cannot_Be_Changed.cpp,GREEDY,sorting / selection
+B_Valerii_Against_Everyone.cpp,GREEDY,sorting / selection
+B_Zhily_and_Mex_and_Max.cpp,GREEDY,sorting / selection
+C_2_Cirno_and_Number_Hard_Version.cpp,GREEDY,sorting / selection
+C_Division_and_Union.cpp,GREEDY,sorting / selection
+C_Interesting_Sequence copy.cpp,GREEDY,sorting / selection
+C_Kuroni_and_Impossible_Calculation.cpp,GREEDY,sorting / selection
+C_Little_Girl_and_Maximum_Sum.cpp,GREEDY,sorting / selection
+C_Nested_Segments.cpp,GREEDY,sorting / selection
+C_Number_of_Equal.cpp,GREEDY,sorting / selection
+C_Powers_Of_Two.cpp,GREEDY,sorting / selection
+C_Raspberries.cpp,GREEDY,sorting / selection
+C_Roads_in_Berland.cpp,GREEDY,sorting / selection
+C_Travelling_Salesman_Problem.cpp,GREEDY,sorting / selection
+C_Two_TVs.cpp,GREEDY,sorting / selection
+C_Vasilije_in_Cacak.cpp,GREEDY,sorting / selection
+C_Vessels_Heights_and_Two_Versions_Easy_Version.cpp,GREEDY,sorting / selection
+Crop.cpp,GREEDY,sorting / selection
+D_Balanced_Round.cpp,GREEDY,sorting / selection
+D_Brand_New_Tatar_TV_Show.cpp,GREEDY,sorting / selection
+D_River_Locks.cpp,GREEDY,sorting / selection
+D_Shocking_Arrangement.cpp,GREEDY,sorting / selection
+Dice.cpp,GREEDY,sorting / selection
+E_Anna_and_the_Valentine_s_Day_Gift.cpp,GREEDY,sorting / selection
+E_Money_Buys_Happiness.cpp,GREEDY,sorting / selection
+F_Eating_Candies.cpp,GREEDY,sorting / selection
+F_Greetings.cpp,GREEDY,sorting / selection
+G_Student_Councils.cpp,GREEDY,sorting / selection
+The_Honest_Woodcutters.cpp,GREEDY,sorting / selection
+Train_Reservation.cpp,GREEDY,sorting / selection
+Two_Rings.cpp,GREEDY,sorting / selection
+Variety.cpp,GREEDY,sorting / selection
+A_Merging_Arrays.cpp,IMPLEMENTATION,general implementation
+A_Mocha_and_Math.cpp,IMPLEMENTATION,general implementation
+A_Unit_Array.cpp,IMPLEMENTATION,general implementation
+A_Zhily_and_Array_Operating.cpp,IMPLEMENTATION,general implementation
+B_Levko_and_Array.cpp,IMPLEMENTATION,general implementation
+B_Olya_and_Game_with_Arrays.cpp,IMPLEMENTATION,general implementation
+D_Beautiful_Array.cpp,IMPLEMENTATION,general implementation
+1_1.cpp,MISC,no strong signature
+456.cpp,MISC,no strong signature
+A_AB_Balance.cpp,MISC,no strong signature
+A_AvtoBus.cpp,MISC,no strong signature
+A_Buttons.cpp,MISC,no strong signature
+A_Desorting.cpp,MISC,no strong signature
+A_Forked.cpp,MISC,no strong signature
+A_Helmets_in_Night_Light.cpp,MISC,no strong signature
+A_Make_it_White.cpp,MISC,no strong signature
+A_Make_It_Zero.cpp,MISC,no strong signature
+A_Strange_Partition.cpp,MISC,no strong signature
+A_Three_Indices.cpp,MISC,no strong signature
+A_Towers_of_Boxes.cpp,MISC,no strong signature
+A_United_We_Stand.cpp,MISC,no strong signature
+A_Walking_Master.cpp,MISC,no strong signature
+B_01_Game.cpp,MISC,no strong signature
+B_Bad_Boy.cpp,MISC,no strong signature
+B_Deja_Vu.cpp,MISC,no strong signature
+B_Eastern_Exhibition.cpp,MISC,no strong signature
+B_Fair_Numbers.cpp,MISC,no strong signature
+B_Flip_the_Bit_Easy_Version.cpp,MISC,no strong signature
+B_Maximum_Sum.cpp,MISC,no strong signature
+B_Monsters.cpp,MISC,no strong signature
+B_Multiply_by_2_divide_by_6.cpp,MISC,no strong signature
+B_Number_of_Smaller.cpp,MISC,no strong signature
+B_Odd_Grasshopper.cpp,MISC,no strong signature
+B_Ropes.cpp,MISC,no strong signature
+B_Sequence_Game.cpp,MISC,no strong signature
+B_Sum_of_Medians.cpp,MISC,no strong signature
+C_Che_city.cpp,MISC,no strong signature
+C_Grid_L.cpp,MISC,no strong signature
+C_Interesting_Sequence.cpp,MISC,no strong signature
+C_Pair_Selection.cpp,MISC,no strong signature
+C_Ski_Resort.cpp,MISC,no strong signature
+C_Test_Generator.cpp,MISC,no strong signature
+Chalkboard_Median.cpp,MISC,no strong signature
+Count_Adjacent_Cells.cpp,MISC,no strong signature
+D_505.cpp,MISC,no strong signature
+D_Deletive_Editing.cpp,MISC,no strong signature
+D_Maximum_Product_Strikes_Back.cpp,MISC,no strong signature
+D_Zhily_and_Barknights.cpp,MISC,no strong signature
+E_Equation.cpp,MISC,no strong signature
+E_liter.cpp,MISC,no strong signature
+E_Lomsat_gelral.cpp,MISC,no strong signature
+E_Segment_Sum.cpp,MISC,no strong signature
+E_Sending_a_Sequence_Over_the_Network.cpp,MISC,no strong signature
+F_Interesting_Function.cpp,MISC,no strong signature
+Fill_Rect_Query.cpp,MISC,no strong signature
+Frog_3.cpp,MISC,no strong signature
+G_Hits_Different.cpp,MISC,no strong signature
+Mod_While_Positive.cpp,MISC,no strong signature
+Plumage_Palette.cpp,MISC,no strong signature
+Repeatedly_Repainting.cpp,MISC,no strong signature
+tempCodeRunnerFile.cpp,MISC,no strong signature
+A_Exciting_Bets.cpp,NUMBER_THEORY,gcd / primes / divisors
+A_Odd_Divisor.cpp,NUMBER_THEORY,gcd / primes / divisors
+A_Orac_and_LCM.cpp,NUMBER_THEORY,gcd / primes / divisors
+A_Row_GCD.cpp,NUMBER_THEORY,gcd / primes / divisors
+A_Serval_and_Mocha_s_Array.cpp,NUMBER_THEORY,gcd / primes / divisors
+B_Longest_Divisors_Interval.cpp,NUMBER_THEORY,gcd / primes / divisors
+B_Make_It_Increasing.cpp,NUMBER_THEORY,gcd / primes / divisors
+B_Permutation_Swap.cpp,NUMBER_THEORY,gcd / primes / divisors
+C_Factorials_and_Powers_of_Two.cpp,NUMBER_THEORY,gcd / primes / divisors
+C_Grouping_Increases.cpp,NUMBER_THEORY,gcd / primes / divisors
+C_Partitioning_the_Array.cpp,NUMBER_THEORY,gcd / primes / divisors
+C_Smilo_and_Monsters.cpp,NUMBER_THEORY,gcd / primes / divisors
+D_CGCDSSQ.cpp,NUMBER_THEORY,gcd / primes / divisors
+D_Count_GCD.cpp,NUMBER_THEORY,gcd / primes / divisors
+D_Divisibility_Game.cpp,NUMBER_THEORY,gcd / primes / divisors
+D_Storming_Arasaka.cpp,NUMBER_THEORY,gcd / primes / divisors
+D_The_67_th_OEIS_Problem.cpp,NUMBER_THEORY,gcd / primes / divisors
+D_Triangle_Coloring.cpp,NUMBER_THEORY,gcd / primes / divisors
+G_1_Teleporters_Easy_Version.cpp,NUMBER_THEORY,gcd / primes / divisors
+L_Controllers.cpp,NUMBER_THEORY,gcd / primes / divisors
+B_250_Thousand_Tons_of_TNT.cpp,PREFIX_SUM,prefix accumulation
+B_Collecting_Game.cpp,PREFIX_SUM,prefix accumulation
+D_Black_and_White_Stripe.cpp,PREFIX_SUM,prefix accumulation
+D_Decidophobia.cpp,PREFIX_SUM,prefix accumulation
+D_Odd_Queries.cpp,PREFIX_SUM,prefix accumulation
+A_Lorenzo_Von_Matterhorn.cpp,SEGMENT_TREE,segment tree / lazy propagation
+D_Penchick_and_Desert_Rabbit.cpp,TREES,tree dfs / parent-subtree
+D_Water_Tree.cpp,TREES,tree dfs / parent-subtree
+E_A_and_B_and_Lecture_Rooms.cpp,BINARY_LIFTING,ancestor jumping
+E_Danil_and_a_Part_time_Job.cpp,TREES,tree dfs / parent-subtree
+E_New_Year_Tree.cpp,TREES,tree dfs / parent-subtree
+E_Xenia_and_Tree.cpp,TREES,tree dfs / parent-subtree
+F_Maximum_modulo_equality.cpp,SEGMENT_TREE,segment tree / lazy propagation
+459.cpp,STRINGS,string / palindrome / pattern
+A_Balanced_Bitstring.cpp,STRINGS,string / palindrome / pattern
+A_Don_t_Try_to_Count.cpp,STRINGS,string / palindrome / pattern
+A_Iris_and_Game_on_the_Tree.cpp,TREES,tree dfs / parent-subtree
+A_Reverse_a_Substring.cpp,STRINGS,string / palindrome / pattern
+Adjacent_Distinct_String.cpp,STRINGS,string / palindrome / pattern
+B_Beautiful_Numbers.cpp,STRINGS,string / palindrome / pattern
+B_Chemistry.cpp,STRINGS,string / palindrome / pattern
+B_Comparison_String.cpp,STRINGS,string / palindrome / pattern
+B_Digit_String.cpp,STRINGS,string / palindrome / pattern
+B_Make_it_Divisible_by_25.cpp,STRINGS,string / palindrome / pattern
+B_Palindrome_Twelve_and_Two_Terms.cpp,STRINGS,string / palindrome / pattern
+B_Password.cpp,TREES,tree dfs / parent-subtree
+B_String_Problem.cpp,STRINGS,string / palindrome / pattern
+B_Swap_and_Delete.cpp,STRINGS,string / palindrome / pattern
+C_1_Cirno_and_Number_Easy_Version.cpp,STRINGS,string / palindrome / pattern
+C_1_Seating_Arrangement_Easy_Version.cpp,STRINGS,string / palindrome / pattern
+C_2_Seating_Arrangement_Hard_Version.cpp,STRINGS,string / palindrome / pattern
+C_Cost_of_a_Bracket_Sequence.cpp,STRINGS,string / palindrome / pattern
+C_Decreasing_String.cpp,STRINGS,string / palindrome / pattern
+C_Flexible_String.cpp,STRINGS,string / palindrome / pattern
+C_Fox_And_Names.cpp,STRINGS,string / palindrome / pattern
+C_Good_Subarrays.cpp,STRINGS,string / palindrome / pattern
+C_Palindrome_Basis.cpp,STRINGS,string / palindrome / pattern
+C_Stands_for_Center.cpp,STRINGS,string / palindrome / pattern
+C_The_Fair_Nut_and_String.cpp,STRINGS,string / palindrome / pattern
+C_Zhily_and_Bracket_Swapping.cpp,STRINGS,string / palindrome / pattern
+Chompers.cpp,STRINGS,string / palindrome / pattern
+Count_Subgrid_Sum_K.cpp,STRINGS,string / palindrome / pattern
+Decisive_Battle.cpp,STRINGS,string / palindrome / pattern
+E_1_Erase_and_Extend_Easy_Version.cpp,STRINGS,string / palindrome / pattern
+E_Good_Triples.cpp,STRINGS,string / palindrome / pattern
+E_Pig_and_Palindromes.cpp,STRINGS,string / palindrome / pattern
+Endless_Holidays.cpp,STRINGS,string / palindrome / pattern
+F_Graph_Without_Long_Directed_Paths.cpp,STRINGS,string / palindrome / pattern
+Hell_World.cpp,STRINGS,string / palindrome / pattern
+Not_Adjacent_2.cpp,STRINGS,string / palindrome / pattern
+Secret_Numbers.cpp,STRINGS,string / palindrome / pattern
+A_Linova_and_the_Kingdom.cpp,TREES,tree dfs / parent-subtree
+B_Appleman_and_Tree.cpp,TREES,tree dfs / parent-subtree
+B_Fish_Graph.cpp,TREES,tree dfs / parent-subtree
+C_Cut_em_all.cpp,TREES,tree dfs / parent-subtree
+C_Kefa_and_Park.cpp,TREES,tree dfs / parent-subtree
+C_Tree_Pruning.cpp,TREES,tree dfs / parent-subtree
+C_Village_Guilds.cpp,TREES,tree dfs / parent-subtree
+D_The_Number_of_Imposters.cpp,TREES,tree dfs / parent-subtree
+E_Fairy.cpp,TREES,tree dfs / parent-subtree
+E_Round_Dance.cpp,TREES,tree dfs / parent-subtree
+F_Maximum_White_Subtree.cpp,TREES,tree dfs / parent-subtree
+F_Tourist_Reform.cpp,TREES,tree dfs / parent-subtree
+F_Tree_with_Maximum_Cost.cpp,TREES,tree dfs / parent-subtree
+G_Josephus_Problem_2.cpp,TREES,tree dfs / parent-subtree
+A_Looped_Playlist.cpp,TWO_POINTERS,sliding window / two pointers
+A_Maximum_Average_Segment.cpp,TWO_POINTERS,sliding window / two pointers
+A_Pride.cpp,TWO_POINTERS,sliding window / two pointers
+A_Segment_with_Small_Sum.cpp,TWO_POINTERS,sliding window / two pointers
+B_Basketball_Together.cpp,TWO_POINTERS,sliding window / two pointers
+B_Segment_with_Big_Sum.cpp,TWO_POINTERS,sliding window / two pointers
+B_Total_Length.cpp,TWO_POINTERS,sliding window / two pointers
+C_Coloring_Trees.cpp,TREES,tree dfs / parent-subtree
+C_Equal_Frequencies.cpp,TWO_POINTERS,sliding window / two pointers
+C_Number_of_Segments_with_Small_Sum.cpp,TWO_POINTERS,sliding window / two pointers
+C_The_67_th_Permutation_Problem.cpp,TWO_POINTERS,sliding window / two pointers
+D_Number_of_Segments_with_Big_Sum.cpp,TWO_POINTERS,sliding window / two pointers
+D_Small_GCD.cpp,TWO_POINTERS,sliding window / two pointers
+D_Stylish_clothes.cpp,TWO_POINTERS,sliding window / two pointers
+E_Advertising_Agency.cpp,TWO_POINTERS,sliding window / two pointers
+E_Knapsack_on_a_Segment.cpp,TWO_POINTERS,sliding window / two pointers
+E_Segments_with_Small_Set.cpp,TWO_POINTERS,sliding window / two pointers
+F_Card_Substrings.cpp,TWO_POINTERS,sliding window / two pointers
+F_Segments_with_Small_Spread.cpp,TWO_POINTERS,sliding window / two pointers
+G_Coprime_Segment.cpp,TWO_POINTERS,sliding window / two pointers
+G_Not_Very_Rude_Substring.cpp,TWO_POINTERS,sliding window / two pointers
+I_Segment_with_the_Required_Subset.cpp,TWO_POINTERS,sliding window / two pointers
+Not_Adjacent.cpp,TWO_POINTERS,sliding window / two pointers
