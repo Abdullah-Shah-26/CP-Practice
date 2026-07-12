@@ -56,29 +56,44 @@ static const auto fastio = []() {
 #define endl '\n'
 
 void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+  ll a, b;
+  cin >> a >> b;
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
+  ll ra = a;
+  ll rb = b;
 
-  if(s < mins || s > maxs){
+  // Reducing a & b to its odd component
+
+  while (ra % 2 == 0) ra /= 2;
+
+  while (rb % 2 == 0) rb /= 2;
+
+  if (ra != rb)
     pf(-1);
-    return;
-  }
+  else {
 
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
+    // Neutralize a & b 
+    // Keep only power of 2 
+    
+    // Before : 
+    // a = 40
+    // ra = 5
 
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
-    }
+    // Now 
+    // a % ra = 40/5 = 8
 
-    pv(ans);
+    a /= ra;
+    b /= rb;
+
+    // Gives us which power of 2 
+    // Ex : log2(8) = 3
+    
+    a = log2(a);
+    b = log2(b);
+
+    ll ans = ceil(abs(a - b) / 3.0);
+
+    pf(ans);
   }
 }
 

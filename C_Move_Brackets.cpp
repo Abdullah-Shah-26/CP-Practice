@@ -55,31 +55,39 @@ static const auto fastio = []() {
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
+/*
+==========================
+Observation / Thinking
+--------------------------
+
+
+
+==========================
+*/
+
 void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+  ll n;
+  cin >> n;
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
+  string s;
+  cin >> s;
 
-  if(s < mins || s > maxs){
-    pf(-1);
-    return;
-  }
+  ll sum = 0;
+  ll ops = 0;
 
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
+  for (int i = 0; i < n; i++) {
+    if (s[i] == '(')
+      sum++;
+    else
+      sum--;
 
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
+    if (sum < 0) {
+      sum = 0;
+      ops++;
     }
-
-    pv(ans);
   }
+
+  pf(ops);
 }
 
 int main() {

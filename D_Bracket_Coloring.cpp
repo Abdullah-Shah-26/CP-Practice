@@ -1,6 +1,3 @@
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -36,16 +33,6 @@ static const auto fastio = []() {
     for (const auto& x : (a)) cout << x << ' '; \
     cout << '\n';                               \
   } while (0)
-#define rm(mat)         \
-  for (auto& r : (mat)) \
-    for (auto& x : (r)) cin >> x
-#define pm(mat)                                   \
-  do {                                            \
-    for (const auto& r : (mat)) {                 \
-      for (const auto& x : (r)) cout << x << ' '; \
-      cout << '\n';                               \
-    }                                             \
-  } while (0)
 #define pf(x) cout << x << '\n'
 #define all(x) begin(x), end(x)
 #define rall(x) rbegin(x), rend(x)
@@ -55,31 +42,61 @@ static const auto fastio = []() {
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
+/*
+==========================
+
+
+
+==========================
+*/
+
 void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+  int n;
+  cin >> n;
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
+  string s;
+  cin >> s;
 
-  if(s < mins || s > maxs){
+  int bal[n];
+  if (s[0] == '(')
+    bal[0] = 1;
+  else
+    bal[0] = -1;
+
+  for (int i = 1; i < n; i++) {
+    if (s[i] == ')')
+      bal[i] = bal[i - 1] - 1;
+    else
+      bal[i] = bal[i - 1] + 1;
+  }
+
+  if (bal[n - 1] != 0) {
     pf(-1);
     return;
   }
 
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
+  if (*min_element(bal, bal + n) == 0 || *max_element(bal, bal + n) == 0) {
+    pf(1);
 
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
-    }
+    for (int i = 0; i < n; i++) cout << 1 << " ";
 
-    pv(ans);
+    cout << endl;
+    return;
   }
+
+  vi ans(n);
+  rep(i, 0, n) {
+    if (bal[i] > 0)
+      ans[i] = 1;
+    else if (bal[i] < 0)
+      ans[i] = 2;
+    else
+      ans[i] = (bal[i - 1] > 0) ? 1 : 2;
+  }
+
+  pf(2);
+  pv(ans);
+  return;
 }
 
 int main() {

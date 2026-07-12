@@ -55,31 +55,57 @@ static const auto fastio = []() {
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
+/*
+==========================
+Observation / Thinking
+--------------------------
+
+Need to alteast have 1 extra copy of each shoe for valid assignment
+
+Can assign via cyclic rotation
+
+==========================
+*/
+
 void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+  ll n;
+  cin >> n;
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
+  vll s(n);
+  rv(s);
 
-  if(s < mins || s > maxs){
+  map<ll, ll> freq;
+  rep(i, 0, n) freq[s[i]]++;
+
+  bool flag = true;
+  for (auto [size, cnt] : freq) {
+    if (cnt == 1) {
+      flag = false;
+      break;
+    }
+  }
+
+  if (!flag) {
     pf(-1);
     return;
   }
 
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
+  vll perm(n);
+  rep(i, 0, n) perm[i] = i + 1;
 
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
+  ll l = 0, r = 0;
+  while (r < n) {
+    if (s[l] == s[r]) // Find segment of shoes with same sizes
+      r++;
+    else { // Cylcic assignment, 
+      rotate(perm.begin() + l, perm.begin() + l + 1, perm.begin() + r);
+      l = r;
     }
-
-    pv(ans);
   }
+
+  rotate(perm.begin() + l, perm.begin() + l + 1, perm.begin() + r);
+
+  pv(perm);
 }
 
 int main() {

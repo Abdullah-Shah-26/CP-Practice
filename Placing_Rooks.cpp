@@ -1,6 +1,3 @@
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -50,45 +47,58 @@ static const auto fastio = []() {
 #define all(x) begin(x), end(x)
 #define rall(x) rbegin(x), rend(x)
 #define pb push_back
-#define YES cout << "YES\n"
-#define NO cout << "NO\n"
+#define YES cout << "Yes\n"
+#define NO cout << "No\n"
+#define yno(a) cout << ((a) ? "Yes\n" : "No\n")
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
+/*
+==========================
+
+
+
+==========================
+*/
 void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+  ll n, m;
+  cin >> n >> m;
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
+  unordered_map<int, int> rtoc;
+  unordered_map<int, int> ctor;
 
-  if(s < mins || s > maxs){
-    pf(-1);
-    return;
-  }
+  rep(i, 0, m) {
+    int r, c;
+    cin >> r >> c;
 
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
-
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
+    auto it1 = rtoc.find(r);
+    if (it1 != rtoc.end()) {
+      int oldc = it1->second;
+      ctor.erase(oldc);
+      rtoc.erase(it1);
     }
 
-    pv(ans);
+    auto it2 = ctor.find(c);
+    if (it2 != ctor.end()) {
+      int oldr = it2->second;
+      rtoc.erase(oldr);
+      ctor.erase(it2);
+    }
+
+    rtoc[r] = c;
+    ctor[c] = r;
   }
+
+  cout << rtoc.size() << endl;
+  return;
 }
 
 int main() {
   int t = 1;
-  cin >> t;
+  // cin >> t;
 
   while (t--) {
     solve();
   }
-
   return 0;
 }

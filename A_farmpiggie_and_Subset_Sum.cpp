@@ -1,6 +1,3 @@
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -36,16 +33,6 @@ static const auto fastio = []() {
     for (const auto& x : (a)) cout << x << ' '; \
     cout << '\n';                               \
   } while (0)
-#define rm(mat)         \
-  for (auto& r : (mat)) \
-    for (auto& x : (r)) cin >> x
-#define pm(mat)                                   \
-  do {                                            \
-    for (const auto& r : (mat)) {                 \
-      for (const auto& x : (r)) cout << x << ' '; \
-      cout << '\n';                               \
-    }                                             \
-  } while (0)
 #define pf(x) cout << x << '\n'
 #define all(x) begin(x), end(x)
 #define rall(x) rbegin(x), rend(x)
@@ -55,31 +42,26 @@ static const auto fastio = []() {
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
+/*
+==========================
+
+
+
+==========================
+*/
+
 void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+  ll n;
+  cin >> n;
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
+  vll a(n);
 
-  if(s < mins || s > maxs){
-    pf(-1);
-    return;
+  for (int i = 0; i < n; i += 2) {
+    a[i] = i + 2;
+    a[i + 1] = i + 1;
   }
 
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
-
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
-    }
-
-    pv(ans);
-  }
+  pv(a);
 }
 
 int main() {

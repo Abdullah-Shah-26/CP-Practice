@@ -55,31 +55,35 @@ static const auto fastio = []() {
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
+/*
+==========================
+Observation / Thinking
+--------------------------
+
+1 stick = (x - 1) stick gain
+Need = k sticks
+
+y sticks req = 1 coals
+k*y sticks req = k coals
+
+Total stick req = (k + (k * y) - 1)
+
+
+Total ops to get req stick via trade1 = ceil((k*y) + k - 1)/(x-1))
+
+To convert (k*y) sticks to k coals via trade2 = k ops req
+
+==========================
+*/
+
 void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+  ll x, y, k;
+  cin >> x >> y >> k;
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
+  ll t1 = (((k * y) + k - 1) + (x - 1) - 1) / (x - 1);
+  ll t2 = k;
 
-  if(s < mins || s > maxs){
-    pf(-1);
-    return;
-  }
-
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
-
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
-    }
-
-    pv(ans);
-  }
+  pf(t1 + t2);
 }
 
 int main() {

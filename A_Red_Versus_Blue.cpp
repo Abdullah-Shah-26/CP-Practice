@@ -1,6 +1,3 @@
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -55,31 +52,35 @@ static const auto fastio = []() {
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
+/*
+==========================
+
+Pigeon Hole Principle
+
+==========================
+*/
+
 void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+  ll n, r, b;
+  cin >> n >> r >> b;
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
+  string s;
 
-  if(s < mins || s > maxs){
-    pf(-1);
-    return;
-  }
+  ll lenR = r / (b + 1);
+  ll extraR = r % (b + 1);
 
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
+  for (int times = 1; times <= b + 1; times++) {
+    for (int i = 0; i < lenR; i++) s += 'R';
 
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
+    if (extraR > 0) {
+      s += 'R';
+      extraR--;
     }
 
-    pv(ans);
+    if (times != b + 1) s += 'B';
   }
+
+  pf(s);
 }
 
 int main() {

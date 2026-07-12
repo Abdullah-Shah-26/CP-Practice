@@ -1,6 +1,3 @@
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -19,7 +16,7 @@ using vvpii = vector<vector<pii>>;
 using vpll = vector<pll>;
 using vvpll = vector<vector<pll>>;
 
-const int INF = 1e9;
+const ll INF = 4e18;
 const ll LINF = 1e18;
 const int MOD = 1e9 + 7;
 
@@ -50,45 +47,58 @@ static const auto fastio = []() {
 #define all(x) begin(x), end(x)
 #define rall(x) rbegin(x), rend(x)
 #define pb push_back
-#define YES cout << "YES\n"
-#define NO cout << "NO\n"
+#define YES cout << "Yes\n"
+#define NO cout << "No\n"
+#define yno(a) cout << ((a) ? "Yes\n" : "No\n")
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
+/*
+==========================
+
+
+
+==========================
+*/
+
 void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+  int n, k;
+  cin >> n >> k;
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
+  vvll dp(k + 1, vll(2, -INF));
+  dp[0][0] = 0;
 
-  if(s < mins || s > maxs){
-    pf(-1);
-    return;
-  }
+  for (int i = 0; i < n; i++) {
+    ll a, b;
+    cin >> a >> b;
 
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
+    vvll ndp(k + 1, vll(2, -INF));
 
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
+    for (int j = 0; j <= k; j++) {
+      if (dp[j][0] != -INF || dp[j][1] != -INF)
+        ndp[j][0] = max(dp[j][0], dp[j][1]) + a;
+
+      if (dp[j][1] != -INF) ndp[j][1] = max(ndp[j][1], dp[j][1] + b);
+
+      if (j > 0 && dp[j - 1][0] != -INF)
+        ndp[j][1] = max(ndp[j][1], dp[j - 1][0] + b);
     }
 
-    pv(ans);
+    dp = ndp;
   }
+
+  ll maxi = -INF;
+  for (int j = 0; j <= k; j++) maxi = max({maxi, dp[j][0], dp[j][1]});
+
+  pf(maxi);
 }
 
 int main() {
   int t = 1;
-  cin >> t;
+  // cin >> t;
 
   while (t--) {
     solve();
   }
-
   return 0;
 }

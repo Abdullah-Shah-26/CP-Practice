@@ -1,6 +1,3 @@
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -20,8 +17,9 @@ using vpll = vector<pll>;
 using vvpll = vector<vector<pll>>;
 
 const int INF = 1e9;
-const ll LINF = 1e18;
+const ll LINF = 4e18;
 const int MOD = 1e9 + 7;
+const ll N = (1 << 20) + 5;
 
 static const auto fastio = []() {
   ios::sync_with_stdio(false);
@@ -36,16 +34,6 @@ static const auto fastio = []() {
     for (const auto& x : (a)) cout << x << ' '; \
     cout << '\n';                               \
   } while (0)
-#define rm(mat)         \
-  for (auto& r : (mat)) \
-    for (auto& x : (r)) cin >> x
-#define pm(mat)                                   \
-  do {                                            \
-    for (const auto& r : (mat)) {                 \
-      for (const auto& x : (r)) cout << x << ' '; \
-      cout << '\n';                               \
-    }                                             \
-  } while (0)
 #define pf(x) cout << x << '\n'
 #define all(x) begin(x), end(x)
 #define rall(x) rbegin(x), rend(x)
@@ -55,34 +43,69 @@ static const auto fastio = []() {
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
-void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+/*
+==========================
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
 
-  if(s < mins || s > maxs){
-    pf(-1);
-    return;
-  }
 
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
+==========================
+*/
 
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
+ll solo[N + 1];
+ll minC[21][100005];
+
+void precompute() {
+  solo[1] = 1;
+
+  for (int i = 2; i <= N; i++)
+    if (i & 1)
+      solo[i] = 1 + solo[i - 1];
+    else
+      solo[i] = 1 + solo[i >> 1];
+
+  for (ll m = 0; m <= 20; m++) {
+    ll s = 1LL << m;
+    ll mini = LINF;
+
+    for (ll y = N; y >= 1; y--) {
+      if (y % s == 0 && solo[y] + y < mini) mini = solo[y] + y;
+
+      if (y <= 100000) minC[m][y] = mini;
     }
-
-    pv(ans);
   }
 }
 
+void solve() {
+  ll n;
+  cin >> n;
+
+  vll a(n);
+
+  ll sum = 0;
+
+  for (int i = 0; i < n; i++) {
+    cin >> a[i];
+    sum += a[i];
+  }
+
+  ll ans = LINF;
+
+  for (int m = 0; m <= 20; m++) {
+    ll cur = 0;
+
+    for (int i = 0; i < n; i++) cur += minC[m][a[i]];
+
+    ll cost = cur - sum - (n - 1) * 1LL * m;
+
+    if (cost < ans) ans = cost;
+  }
+
+  pf(ans);
+}
+
 int main() {
+  precompute();
+
   int t = 1;
   cin >> t;
 

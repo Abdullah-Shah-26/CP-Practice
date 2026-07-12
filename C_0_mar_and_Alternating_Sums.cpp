@@ -1,6 +1,3 @@
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -36,16 +33,6 @@ static const auto fastio = []() {
     for (const auto& x : (a)) cout << x << ' '; \
     cout << '\n';                               \
   } while (0)
-#define rm(mat)         \
-  for (auto& r : (mat)) \
-    for (auto& x : (r)) cin >> x
-#define pm(mat)                                   \
-  do {                                            \
-    for (const auto& r : (mat)) {                 \
-      for (const auto& x : (r)) cout << x << ' '; \
-      cout << '\n';                               \
-    }                                             \
-  } while (0)
 #define pf(x) cout << x << '\n'
 #define all(x) begin(x), end(x)
 #define rall(x) rbegin(x), rend(x)
@@ -55,31 +42,58 @@ static const auto fastio = []() {
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
+/*
+==========================
+
+
+
+==========================
+*/
+
+ll binExpo(ll a, ll b) {
+  ll ans = 1;
+
+  while (b) {
+    if (b & 1) ans = ans * a % MOD;
+
+    a = a * a % MOD;
+    b >>= 1;
+  }
+
+  return ans;
+}
+
 void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+  ll n;
+  cin >> n;
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
+  vll a(n);
+  rv(a);
 
-  if(s < mins || s > maxs){
-    pf(-1);
-    return;
+  ll cntNeg = 0;
+  unordered_map<ll, ll> freq;
+
+  for (auto& x : a) {
+    if (x == -1)
+      cntNeg++;
+    else
+      freq[x]++;
   }
 
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
+  ll unq = freq.size();
+  ll p = 0;
 
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
-    }
+  for (auto& [v, cnt] : freq)
+    if (freq.count(v + 1)) p++;
 
-    pv(ans);
-  }
+  ll ans = 0;
+
+  if (cntNeg > 0)
+    ans = (binExpo(2, n - unq - 1) % MOD * (1 + p) % MOD) % MOD;
+  else
+    ans = binExpo(2, n - unq);
+
+  pf(ans);
 }
 
 int main() {

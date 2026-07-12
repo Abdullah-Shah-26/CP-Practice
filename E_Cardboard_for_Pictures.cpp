@@ -1,6 +1,3 @@
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -36,16 +33,6 @@ static const auto fastio = []() {
     for (const auto& x : (a)) cout << x << ' '; \
     cout << '\n';                               \
   } while (0)
-#define rm(mat)         \
-  for (auto& r : (mat)) \
-    for (auto& x : (r)) cin >> x
-#define pm(mat)                                   \
-  do {                                            \
-    for (const auto& r : (mat)) {                 \
-      for (const auto& x : (r)) cout << x << ' '; \
-      cout << '\n';                               \
-    }                                             \
-  } while (0)
 #define pf(x) cout << x << '\n'
 #define all(x) begin(x), end(x)
 #define rall(x) rbegin(x), rend(x)
@@ -55,31 +42,42 @@ static const auto fastio = []() {
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
+/*
+==========================
+
+Binary Search on W
+
+==========================
+*/
+
 void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+  ll n, c;
+  cin >> n >> c;
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
+  vll a(n);
+  rv(a);
 
-  if(s < mins || s > maxs){
-    pf(-1);
-    return;
-  }
+  ll l = 1, r = 1e9, ans = -1;
 
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
+  while (l <= r) {
+    ll mid = (l + r) >> 1;
 
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
+    ll sum = 0;
+    for (int i = 0; i < n; i++) {
+      // Area = (s + 2*w) ^ 2
+      sum += (a[i] + 2 * mid) * (a[i] + 2 * mid);
+      if (sum > c) break;
     }
 
-    pv(ans);
+    if (sum <= c) {
+      ans = mid;
+      l = mid + 1;
+    } else {
+      r = mid - 1;
+    }
   }
+
+  pf(ans);
 }
 
 int main() {

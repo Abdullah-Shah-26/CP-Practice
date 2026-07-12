@@ -1,6 +1,3 @@
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -55,31 +52,86 @@ static const auto fastio = []() {
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
-void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+/*
+==========================
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
 
-  if(s < mins || s > maxs){
-    pf(-1);
-    return;
+
+==========================
+*/
+
+int a[200000];
+int pref[33][200001];
+// pref[bit][i] = cnt of zero in bit among a[0...i-1]
+
+int rangeAnd(int l, int r) {
+  int ans = 0;
+
+  for (int i = 0; i < 32; i++) {
+    // No of zeros in that bit from a[0] to a[i-1] is 0
+    // Implies everyone has 1
+
+    if (pref[i][r + 1] - pref[i][l] == 0) {
+      ans |= (1 << i);
+    }
   }
 
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
+  return ans;
+}
 
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
+void solve() {
+  ll n;
+  cin >> n;
+
+  for (int i = 0; i < n; i++) cin >> a[i];
+
+  for (int j = 0; j < 32; j++) {
+    pref[j][0] = 0;  // empty pref has 0 zeros
+
+    for (int i = 0; i < n; i++) {
+      if ((1 << j) & a[i]) {
+        pref[j][i + 1] = pref[j][i];
+      } else {
+        pref[j][i + 1] = pref[j][i] + 1;
+      }
+    }
+  }
+
+  ll q;
+  cin >> q;
+
+  while (q--) {
+    ll l, k;
+    cin >> l >> k;
+
+    l--;
+
+    // AND over an expanding range is non-increasing; if a[l] < k, no r can
+    // satisfy
+    if (a[l] < k) {
+      cout << -1 << " ";
+      continue;
     }
 
-    pv(ans);
+    // Binary search the maximum r such that AND(a[l..r]) >= k
+    ll low = l, high = n - 1;
+    ll maxr = l;
+
+    while (low <= high) {
+      ll mid = (low + high) >> 1;
+
+      if (rangeAnd(l, mid) >= k) {
+        maxr = mid;
+        low = mid + 1;
+      } else {
+        high = mid - 1;
+      }
+    }
+
+    cout << maxr + 1 << " ";
   }
+
+  cout << endl;
 }
 
 int main() {

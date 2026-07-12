@@ -1,6 +1,3 @@
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -50,45 +47,42 @@ static const auto fastio = []() {
 #define all(x) begin(x), end(x)
 #define rall(x) rbegin(x), rend(x)
 #define pb push_back
-#define YES cout << "YES\n"
-#define NO cout << "NO\n"
+#define YES cout << "Yes\n"
+#define NO cout << "No\n"
+#define yno(a) cout << ((a) ? "Yes\n" : "No\n")
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
+/*
+==========================
+
+
+
+==========================
+*/
 void solve() {
-  ll n, k, b, s;
-  cin >> n >> k >> b >> s;
+  int n, m;
+  cin >> n >> m;
 
-  ll mins = (k * b);
-  ll maxs = (k * b) + (k - 1) * n;
+  vi x(m + 1, -1);
+  for (int i = 0; i < n; i++) {
+    int c, s;
+    cin >> c >> s;
 
-  if(s < mins || s > maxs){
-    pf(-1);
-    return;
+    x[c] = max(s, x[c]);
   }
 
-  else{
-    vll ans(n,0);
-    ans[0] = mins;
-    s -= mins;
+  for (int i = 1; i <= m; i++) cout << x[i] << " ";
 
-    rep(i,0,n){
-      ll add = min(k-1, s);
-      ans[i] += add;
-      s -= add;
-    }
-
-    pv(ans);
-  }
+  cout << endl;
 }
 
 int main() {
   int t = 1;
-  cin >> t;
+  // cin >> t;
 
   while (t--) {
     solve();
   }
-
   return 0;
 }
