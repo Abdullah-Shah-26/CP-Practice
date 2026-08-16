@@ -18,7 +18,7 @@ using vvpll = vector<vector<pll>>;
 
 const int INF = 1e9;
 const ll LINF = 1e18;
-const int MOD = 1e9 + 7;
+const int MOD = 998244353;
 
 static const auto fastio = []() {
   ios::sync_with_stdio(false);
@@ -50,28 +50,46 @@ static const auto fastio = []() {
 ==========================
 */
 
-ll lcm(ll a, ll b){
-  return (a*b)/gcd(a,b);
-}
-
-// AP : 
-// sum = ((first + last)*(no of terms))/2
-
-ll computeSum(ll st, ll end){
-  ll sum = ((st + end) * (end - st + 1))/2;
-  return sum;
-}
-
 void solve() {
-  ll n, x, y;
-  cin >> n >> x >> y;
+  int n;
+  cin >> n;
 
-  ll cnt1 = (n / x) - (n / lcm(x, y));
-  ll cnt2 = (n / y) - (n / lcm(x, y));
+  string s;
+  cin >> s;
 
-  ll ans = computeSum(n - cnt1 + 1, n) - computeSum(1LL, cnt2);
+  ll odd = 0, even = 0;
 
-  pf(ans);
+  for (int st = 0; st <= 1; st++) {
+    bool valid = true;
+
+    for (int i = 0; i < n; i += 2) {
+      int e = st ^ ((i / 2) & 1);
+
+      if (s[i] != '?' && s[i] - '0' != e) {
+        valid = false;
+        break;
+      }
+    }
+
+    if (valid) odd++;
+  }
+
+  for (int st = 0; st <= 1; st++) {
+    bool valid = true;
+
+    for (int i = 1; i < n; i += 2) {
+      int e = st ^ (((i - 1) / 2) & 1);
+
+      if (s[i] != '?' && s[i] - '0' != e) {
+        valid = false;
+        break;
+      }
+    }
+
+    if (valid) even++;
+  }
+
+  pf(odd * even);
 }
 
 int main() {

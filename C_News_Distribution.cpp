@@ -50,37 +50,75 @@ static const auto fastio = []() {
 ==========================
 */
 
-ll lcm(ll a, ll b){
-  return (a*b)/gcd(a,b);
-}
+class DSU {
+ private:
+  vector<int> parent;
+  vector<int> size;
 
-// AP : 
-// sum = ((first + last)*(no of terms))/2
+ public:
+  DSU(int n) {
+    parent.resize(n);
+    size.assign(n, 1);
 
-ll computeSum(ll st, ll end){
-  ll sum = ((st + end) * (end - st + 1))/2;
-  return sum;
-}
+    for (int i = 0; i < n; i++) parent[i] = i;
+  }
+
+  int find(int node) {
+    if (parent[node] == node) return node;
+
+    return parent[node] = find(parent[node]);
+  }
+
+  bool unite(int u, int v) {
+    u = find(u);
+    v = find(v);
+
+    if (u == v) return false;
+
+    if (size[u] < size[v]) swap(u, v);
+
+    parent[v] = u;
+    size[u] += size[v];
+
+    return true;
+  }
+
+  bool same(int u, int v) { return find(u) == find(v); }
+
+  int compSz(int node) { return size[find(node)]; }
+
+  int leader(int node) { return find(node); }
+};
 
 void solve() {
-  ll n, x, y;
-  cin >> n >> x >> y;
+  int n, m;
+  cin >> n >> m;
 
-  ll cnt1 = (n / x) - (n / lcm(x, y));
-  ll cnt2 = (n / y) - (n / lcm(x, y));
+  DSU dsu(n);
 
-  ll ans = computeSum(n - cnt1 + 1, n) - computeSum(1LL, cnt2);
+  for (int i = 0; i < m; i++) {
+    int k;
+    cin >> k;
 
-  pf(ans);
+    if (k > 0) {
+      int first;
+      cin >> first;
+      first--;
+
+      for (int j = 1; j < k; j++) {
+        int a;
+        cin >> a;
+        a--;
+
+        dsu.unite(first, a);
+      }
+    }
+  }
+
+  for (int i = 0; i < n; i++) cout << dsu.compSz(i) << ' ';
 }
 
 int main() {
-  int t = 1;
-  cin >> t;
-
-  while (t--) {
-    solve();
-  }
-
+  solve();
   return 0;
 }

@@ -50,33 +50,64 @@ static const auto fastio = []() {
 ==========================
 */
 
-ll lcm(ll a, ll b){
-  return (a*b)/gcd(a,b);
+ll binExpo(ll a, ll b) {
+  ll ans = 1;
+
+  while (b) {
+    if (b & 1) ans = ans * a % MOD;
+
+    a = a * a % MOD;
+    b >>= 1;
+  }
+
+  return ans;
 }
 
-// AP : 
-// sum = ((first + last)*(no of terms))/2
+vvi adj;
+vi vis;
+int sz;
 
-ll computeSum(ll st, ll end){
-  ll sum = ((st + end) * (end - st + 1))/2;
-  return sum;
+void dfs(int x) {
+  vis[x] = 1;
+  sz++;  // count vertex in current red component
+  for (auto& i : adj[x]) {
+    if (!vis[i]) dfs(i);  // explore only through red edges
+  }
 }
 
 void solve() {
-  ll n, x, y;
-  cin >> n >> x >> y;
+  int n, k;
+  cin >> n >> k;
 
-  ll cnt1 = (n / x) - (n / lcm(x, y));
-  ll cnt2 = (n / y) - (n / lcm(x, y));
+  adj.assign(n + 1, {});
 
-  ll ans = computeSum(n - cnt1 + 1, n) - computeSum(1LL, cnt2);
+  for (int i = 0; i < n - 1; i++) {
+    int u, v, x;
+    cin >> u >> v >> x;
 
+    if (x == 0) {
+      adj[u].pb(v);
+      adj[v].pb(u);
+    }
+  }
+
+  int ans = 0;
+  vis.assign(n + 1, 0);
+
+  for (int i = 1; i <= n; i++) {
+    if (!vis[i]) {
+      sz = 0;
+      dfs(i);
+      ans = (ans + binExpo(sz, k)) % MOD;
+    }
+  }
+
+  ans = (binExpo(n, k) - ans + MOD) % MOD;
   pf(ans);
 }
 
 int main() {
   int t = 1;
-  cin >> t;
 
   while (t--) {
     solve();

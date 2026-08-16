@@ -45,38 +45,42 @@ static const auto fastio = []() {
 /*
 ==========================
 
-
+product is +ve -> If even no of -ve
+product is -ve -> If odd no of -ve
 
 ==========================
 */
 
-ll lcm(ll a, ll b){
-  return (a*b)/gcd(a,b);
-}
-
-// AP : 
-// sum = ((first + last)*(no of terms))/2
-
-ll computeSum(ll st, ll end){
-  ll sum = ((st + end) * (end - st + 1))/2;
-  return sum;
-}
-
 void solve() {
-  ll n, x, y;
-  cin >> n >> x >> y;
+  int n;
+  cin >> n;
 
-  ll cnt1 = (n / x) - (n / lcm(x, y));
-  ll cnt2 = (n / y) - (n / lcm(x, y));
+  vll a(n);
+  rv(a);
 
-  ll ans = computeSum(n - cnt1 + 1, n) - computeSum(1LL, cnt2);
+  int odd = 0, even = 1; 
+  bool cur = 0; 
+  ll ans = 0; 
 
-  pf(ans);
+  rep(i, 0, n){
+    if(a[i] < 0)
+      cur = 1 - cur;
+
+    if(cur == 0){
+      ans += even;
+      even++;
+    }
+    else{
+      ans += odd;
+      odd++;
+    }
+  }
+
+  cout << 1LL * n * (n + 1)/2 - ans << " " << ans << endl;
 }
 
 int main() {
   int t = 1;
-  cin >> t;
 
   while (t--) {
     solve();

@@ -50,33 +50,45 @@ static const auto fastio = []() {
 ==========================
 */
 
-ll lcm(ll a, ll b){
-  return (a*b)/gcd(a,b);
-}
-
-// AP : 
-// sum = ((first + last)*(no of terms))/2
-
-ll computeSum(ll st, ll end){
-  ll sum = ((st + end) * (end - st + 1))/2;
-  return sum;
-}
-
 void solve() {
-  ll n, x, y;
-  cin >> n >> x >> y;
+  int n;
+  cin >> n;
 
-  ll cnt1 = (n / x) - (n / lcm(x, y));
-  ll cnt2 = (n / y) - (n / lcm(x, y));
+  vi good(n);
+  vvi adj(n);
 
-  ll ans = computeSum(n - cnt1 + 1, n) - computeSum(1LL, cnt2);
+  for (int i = 0; i < n; i++) {
+    int p, t;
+    cin >> p >> t;
 
-  pf(ans);
+    if (t == 0) good[i] = true;
+
+    if (p != -1) {
+      adj[p - 1].pb(i);
+    }
+  }
+
+  vi ans;
+  for (int i = 0; i < n; i++) {
+    if (good[i]) continue;
+
+    bool flag = true;
+    for (auto x : adj[i]) {
+      if (good[x]) flag = false;
+    }
+
+    if (flag) ans.pb(i + 1);
+  }
+
+  if (ans.size())
+    pv(ans);
+  else
+    pf(-1);
 }
 
 int main() {
   int t = 1;
-  cin >> t;
+  // cin >> t;
 
   while (t--) {
     solve();

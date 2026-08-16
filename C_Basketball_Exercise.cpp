@@ -45,38 +45,60 @@ static const auto fastio = []() {
 /*
 ==========================
 
+No 2 consecutive selections can be from same row
+Index of present chosen guy should be > past chosen idx
+ie same idx can't be chosen
 
+dp1[i] = max ht we can obtain using col 1..i where the last guy is from row 1
+
+dp2[i] = max ht we can obtain using col 1..i where the last guy is from row 2
+
+dp1[i] = max(dp1[i], a[i] + dp2[i - 1])
+dp2[i] = max(dp2[i], b[i] + dp1[i - 1])
+
+dp[i] = max total ht using col 1...i
+
+Skip :
+dp[i] = dp[i - 1]
+
+Take :
+Case 1 : Take from row 1, then last guy must be from row 2
+Case 2 : Take from row 2, then last guy must be from row 1
+
+dp[i] = max(dp[i - 1], a[i] + dp2[i - 1], b[i] + dp1[i - 1])
 
 ==========================
 */
 
-ll lcm(ll a, ll b){
-  return (a*b)/gcd(a,b);
-}
-
-// AP : 
-// sum = ((first + last)*(no of terms))/2
-
-ll computeSum(ll st, ll end){
-  ll sum = ((st + end) * (end - st + 1))/2;
-  return sum;
-}
-
 void solve() {
-  ll n, x, y;
-  cin >> n >> x >> y;
+  int n;
+  cin >> n;
 
-  ll cnt1 = (n / x) - (n / lcm(x, y));
-  ll cnt2 = (n / y) - (n / lcm(x, y));
+  vll a(n), b(n);
 
-  ll ans = computeSum(n - cnt1 + 1, n) - computeSum(1LL, cnt2);
+  rv(a);
+  rv(b);
 
-  pf(ans);
+  vll dp(n), dp1(n), dp2(n);
+
+  dp1[0] = a[0];
+  dp2[0] = b[0];
+  dp[0] = max(dp1[0], dp2[0]);
+
+  for (int i = 1; i < n; i++) {
+
+    // Skip, Take past from diff row + current from this row
+    dp1[i] = max(dp1[i - 1], dp2[i - 1] + a[i]);
+    dp2[i] = max(dp2[i - 1], dp1[i - 1] + b[i]);
+
+    dp[i] = max({dp[i - 1], dp1[i], dp2[i]});
+  }
+
+  cout << dp[n - 1] << endl;
 }
 
 int main() {
   int t = 1;
-  cin >> t;
 
   while (t--) {
     solve();

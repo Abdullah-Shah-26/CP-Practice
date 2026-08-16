@@ -50,33 +50,55 @@ static const auto fastio = []() {
 ==========================
 */
 
-ll lcm(ll a, ll b){
-  return (a*b)/gcd(a,b);
-}
-
-// AP : 
-// sum = ((first + last)*(no of terms))/2
-
-ll computeSum(ll st, ll end){
-  ll sum = ((st + end) * (end - st + 1))/2;
-  return sum;
-}
-
 void solve() {
-  ll n, x, y;
-  cin >> n >> x >> y;
+  int n;
+  cin >> n;
 
-  ll cnt1 = (n / x) - (n / lcm(x, y));
-  ll cnt2 = (n / y) - (n / lcm(x, y));
+  vi a(n), b(n);
+  rv(a);
+  rv(b);
 
-  ll ans = computeSum(n - cnt1 + 1, n) - computeSum(1LL, cnt2);
+  map<pair<int, int>, int> freq;
+
+  int ans = 0;
+
+  for (int i = 0; i < n; i++) {
+    if (a[i] == 0) {
+      if (b[i] == 0) { // 0 * d + 0 = 0
+        ans++;
+      }
+      continue;
+    }
+
+    // d = -b[i]/a[i]
+    int p = -b[i], q = a[i];
+    int g = __gcd(abs(p), abs(q));
+    
+    // To normalize
+    p /= g;
+    q /= g;
+
+    if(q < 0){
+      p = -p;
+      q = -q;
+    }
+
+    freq[{p,q}]++;
+  }
+
+  int maxF = 0; 
+
+  for(auto &it : freq)
+    maxF = max(maxF, it.second);
+
+  ans += maxF;
 
   pf(ans);
 }
 
 int main() {
   int t = 1;
-  cin >> t;
+  // cin >> t;
 
   while (t--) {
     solve();

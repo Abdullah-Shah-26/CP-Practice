@@ -33,12 +33,23 @@ static const auto fastio = []() {
     for (const auto& x : (a)) cout << x << ' '; \
     cout << '\n';                               \
   } while (0)
+#define rm(mat)         \
+  for (auto& r : (mat)) \
+    for (auto& x : (r)) cin >> x
+#define pm(mat)                                   \
+  do {                                            \
+    for (const auto& r : (mat)) {                 \
+      for (const auto& x : (r)) cout << x << ' '; \
+      cout << '\n';                               \
+    }                                             \
+  } while (0)
 #define pf(x) cout << x << '\n'
 #define all(x) begin(x), end(x)
 #define rall(x) rbegin(x), rend(x)
 #define pb push_back
-#define YES cout << "YES\n"
-#define NO cout << "NO\n"
+#define YES cout << "Yes\n"
+#define NO cout << "No\n"
+#define yno(a) cout << ((a) ? "Yes\n" : "No\n")
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
@@ -50,37 +61,56 @@ static const auto fastio = []() {
 ==========================
 */
 
-ll lcm(ll a, ll b){
-  return (a*b)/gcd(a,b);
-}
-
-// AP : 
-// sum = ((first + last)*(no of terms))/2
-
-ll computeSum(ll st, ll end){
-  ll sum = ((st + end) * (end - st + 1))/2;
-  return sum;
-}
-
 void solve() {
-  ll n, x, y;
-  cin >> n >> x >> y;
+  ll n, q;
+  cin >> n >> q;
 
-  ll cnt1 = (n / x) - (n / lcm(x, y));
-  ll cnt2 = (n / y) - (n / lcm(x, y));
+  vi a(n);
+  set<int> st;
 
-  ll ans = computeSum(n - cnt1 + 1, n) - computeSum(1LL, cnt2);
+  int xr = 0;
 
-  pf(ans);
+  while (q--) {
+    int t;
+    cin >> t;
+
+    if (t == 1) {
+      int x;
+      cin >> x;
+      x--;
+
+      xr ^= a[x];
+
+      if (a[x] == 0) st.insert(x);
+
+      a[x]++;
+
+      xr ^= a[x];
+    } else {
+      for (auto it = st.begin(); it != st.end();) {
+        int i = *it;
+
+        xr ^= a[i];
+        a[i]--;
+        xr ^= a[i];
+
+        if (a[i] == 0)
+          it = st.erase(it);
+        else
+          it++;
+      }
+    }
+
+    pf(xr);
+  }
 }
 
 int main() {
   int t = 1;
-  cin >> t;
+  // cin >> t;
 
   while (t--) {
     solve();
   }
-
   return 0;
 }

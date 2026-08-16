@@ -50,28 +50,28 @@ static const auto fastio = []() {
 ==========================
 */
 
-ll lcm(ll a, ll b){
-  return (a*b)/gcd(a,b);
-}
+bool isPrime(ll x) {
+  if (x < 2) return false;
 
-// AP : 
-// sum = ((first + last)*(no of terms))/2
+  for (ll i = 2; i * i <= x; i++) {
+    if (x % i == 0) return false;
+  }
 
-ll computeSum(ll st, ll end){
-  ll sum = ((st + end) * (end - st + 1))/2;
-  return sum;
+  return true;
 }
 
 void solve() {
-  ll n, x, y;
-  cin >> n >> x >> y;
+  ll d;
+  cin >> d;
 
-  ll cnt1 = (n / x) - (n / lcm(x, y));
-  ll cnt2 = (n / y) - (n / lcm(x, y));
+  ll p = d + 1;
 
-  ll ans = computeSum(n - cnt1 + 1, n) - computeSum(1LL, cnt2);
+  while (!isPrime(p)) p++;
 
-  pf(ans);
+  ll q = p + d;
+  while (!isPrime(q)) q++;
+
+  cout << p * q << endl;
 }
 
 int main() {

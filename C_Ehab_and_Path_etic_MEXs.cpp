@@ -50,33 +50,45 @@ static const auto fastio = []() {
 ==========================
 */
 
-ll lcm(ll a, ll b){
-  return (a*b)/gcd(a,b);
-}
-
-// AP : 
-// sum = ((first + last)*(no of terms))/2
-
-ll computeSum(ll st, ll end){
-  ll sum = ((st + end) * (end - st + 1))/2;
-  return sum;
-}
-
 void solve() {
-  ll n, x, y;
-  cin >> n >> x >> y;
+  int n;
+  cin >> n;
 
-  ll cnt1 = (n / x) - (n / lcm(x, y));
-  ll cnt2 = (n / y) - (n / lcm(x, y));
+  vector<vector<pii>> adj(n + 1);
 
-  ll ans = computeSum(n - cnt1 + 1, n) - computeSum(1LL, cnt2);
+  for (int i = 0; i < n - 1; i++) {
+    int u, v;
+    cin >> u >> v;
 
-  pf(ans);
+    adj[u].pb({v, i});
+    adj[v].pb({u, i});
+  }
+
+  vi ans(n - 1, -1);
+
+  int k = 0;
+  for (int i = 1; i <= n; i++) {
+    if (adj[i].size() >= 3) {  // Not a pipe
+      ans[adj[i][0].second] = 0;
+      ans[adj[i][1].second] = 1;
+      ans[adj[i][2].second] = 2;
+      k = 3;
+      break;
+    }
+  }
+
+  for (int i = 0; i < n - 1; i++) {
+    if (ans[i] == -1) {
+      ans[i] = k;
+      k++;
+    }
+  }
+
+  for (auto x : ans) cout << x << endl;
 }
 
 int main() {
   int t = 1;
-  cin >> t;
 
   while (t--) {
     solve();

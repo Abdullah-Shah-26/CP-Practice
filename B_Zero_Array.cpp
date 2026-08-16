@@ -50,33 +50,28 @@ static const auto fastio = []() {
 ==========================
 */
 
-ll lcm(ll a, ll b){
-  return (a*b)/gcd(a,b);
-}
-
-// AP : 
-// sum = ((first + last)*(no of terms))/2
-
-ll computeSum(ll st, ll end){
-  ll sum = ((st + end) * (end - st + 1))/2;
-  return sum;
-}
-
 void solve() {
-  ll n, x, y;
-  cin >> n >> x >> y;
+  ll n;
+  cin >> n;
 
-  ll cnt1 = (n / x) - (n / lcm(x, y));
-  ll cnt2 = (n / y) - (n / lcm(x, y));
+  vll a(n);
+  ll sum = 0, mx = 0;
 
-  ll ans = computeSum(n - cnt1 + 1, n) - computeSum(1LL, cnt2);
+  for (ll x : a) {
+    cin >> x;
+    sum += x;
+    mx = max(mx, x);
+  }
 
-  pf(ans);
+  if (sum % 2 || mx > sum - mx) {
+    NO;
+  } else {
+    YES;
+  }
 }
 
 int main() {
   int t = 1;
-  cin >> t;
 
   while (t--) {
     solve();
