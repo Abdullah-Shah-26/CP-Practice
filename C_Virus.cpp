@@ -51,24 +51,40 @@ static const auto fastio = []() {
 */
 
 void solve() {
-  string a, b;
-  cin >> a >> b;
+  ll n, m;
+  cin >> n >> m;
 
-  ll n = a.size(), m = b.size();
-  ll LCS = 0;
+  vll a(m);
+  rv(a);
 
-  for (ll len = 1; len <= min(n, m); len++) {
-    for (ll i = 0; i + len <= n; i++) {
-      for (ll j = 0; j + len <= m; j++) {
-        string a1 = a.substr(i, len);
-        string b1 = b.substr(j, len);
+  sort(all(a));
 
-        if (a1 == b1) LCS = max(LCS, len);
+  vll gaps;
+
+  for (int i = 0; i < m - 1; i++) gaps.pb(a[i + 1] - a[i] - 1);
+
+  gaps.pb(n - a[m - 1] + a[0] - 1);
+
+  sort(rall(gaps));
+
+  ll time = 0;
+  ll saved = 0;
+
+  for (ll i = 0; i < gaps.size(); i++) {
+    ll sz = gaps[i] - 2LL * time;
+
+    if (sz > 2) {
+      saved += sz - 1;
+      time += 2;
+    } else {
+      if (sz == 1 || sz == 2) {
+        saved++;
+        time++;
       }
     }
   }
 
-  cout << n + m - 2 * LCS << endl;
+  cout << n - saved << endl;
 }
 
 int main() {
