@@ -50,30 +50,61 @@ static const auto fastio = []() {
 */
 
 void solve() {
-  ll n, k;
-  cin >> n >> k;
+  int n;
+  cin >> n;
 
   vll a(n);
   rv(a);
 
-  vll pref(n);
-  pref[0] = a[0];
+  int cnt0 = count(all(a), 0);
 
-  for (int i = 1; i < n; i++) pref[i] = pref[i - 1] + a[i];
+  if (cnt0 == n) {
+    for (int i = 1; i <= n; i++) cout << i << " ";
 
-  ll sum = 0;
-
-  for (int i = 0; i < n - k + 1; i++) {
-    sum += pref[i + k - 1] - (i == 0 ? 0 : pref[i - 1]);
+    cout << endl;
+    return;
   }
 
-  double avg = (double)sum / (n - k + 1);
+  int cnt[30] = {};
 
-  cout << fixed << setprecision(6) << avg << endl;
+  for (int x : a) {
+    for (int b = 0; b < 30; b++) {
+      if (x & (1 << b)) {
+        cnt[b]++;
+      }
+    }
+  }
+
+  int g = 0;  // gcd(0, x) = x
+
+  for (int b = 0; b < 30; b++) {
+    if (cnt[b]) {
+      g = gcd(g, cnt[b]);
+    }
+  }
+
+  vi ans;
+
+  for (int d = 1; d * d <= g; d++) {
+    if (g % d == 0) {
+      ans.pb(d);
+
+      if (d != g / d) {
+        ans.pb(g / d);
+      }
+    }
+  }
+
+  sort(all(ans));
+
+  for (int x : ans) cout << x << " ";
+
+  cout << endl;
 }
 
 int main() {
   int t = 1;
+  cin >> t;
 
   while (t--) {
     solve();

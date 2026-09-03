@@ -50,30 +50,37 @@ static const auto fastio = []() {
 */
 
 void solve() {
-  ll n, k;
-  cin >> n >> k;
+  int n;
+  cin >> n;
 
-  vll a(n);
-  rv(a);
+  vector<long long> a(n), b(n), c(n);
 
-  vll pref(n);
-  pref[0] = a[0];
+  for (auto& x : a) cin >> x;
+  for (auto& x : b) cin >> x;
 
-  for (int i = 1; i < n; i++) pref[i] = pref[i - 1] + a[i];
+  long long mx = LLONG_MIN;
 
-  ll sum = 0;
-
-  for (int i = 0; i < n - k + 1; i++) {
-    sum += pref[i + k - 1] - (i == 0 ? 0 : pref[i - 1]);
+  for (int i = 0; i < n; i++) {
+    c[i] = a[i] - b[i];
+    mx = max(mx, c[i]);
   }
 
-  double avg = (double)sum / (n - k + 1);
+  vector<int> ans;
 
-  cout << fixed << setprecision(6) << avg << endl;
+  for (int i = 0; i < n; i++) {
+    if (c[i] == mx) ans.push_back(i + 1);
+  }
+
+  cout << ans.size() << '\n';
+
+  for (int x : ans) cout << x << ' ';
+
+  cout << '\n';
 }
 
 int main() {
   int t = 1;
+  cin >> t;
 
   while (t--) {
     solve();

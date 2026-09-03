@@ -50,30 +50,73 @@ static const auto fastio = []() {
 */
 
 void solve() {
-  ll n, k;
-  cin >> n >> k;
+  ll k, x; // Limit on cumulative sum = x
+  cin >> k >> x;
 
-  vll a(n);
-  rv(a);
-
-  vll pref(n);
-  pref[0] = a[0];
-
-  for (int i = 1; i < n; i++) pref[i] = pref[i - 1] + a[i];
-
-  ll sum = 0;
-
-  for (int i = 0; i < n - k + 1; i++) {
-    sum += pref[i + k - 1] - (i == 0 ? 0 : pref[i - 1]);
+  if (x > k * k) {
+    cout << 2 * k - 1 << endl;
+    return;
   }
 
-  double avg = (double)sum / (n - k + 1);
+  ll ans1 = 0;
 
-  cout << fixed << setprecision(6) << avg << endl;
+  // BS
+  // 1 .... k
+
+  ll low = 1, high = k;
+
+  while (low <= high) {
+    ll mid = low + (high - low) / 2;
+
+    ll sum = mid * (mid + 1) / 2;
+
+    if (sum >= x) {
+      ans1 = mid;
+      high = mid - 1;
+    } else {
+      low = mid + 1;
+    }
+  }
+
+  ll peak = 1LL * k * (k + 1) / 2;
+
+  if (x <= peak) {
+    cout << ans1 << endl;
+    return;
+  }
+
+  // BS
+  // (k-1) .... 1
+
+  ll ans2 = 0;
+  ll need = x - peak;
+
+  low = 1, high = k - 1;
+
+  while (low <= high) {
+    ll mid = (low) + (high - low) / 2; // No of messages 
+
+    ll sum = mid * (2 * k - mid - 1) / 2; // Cumulative sum uptil this message
+
+    if (sum >= need) {
+      ans2 = mid;
+      high = mid - 1;
+    } else {
+      low = mid + 1;
+    }
+  }
+
+  if (ans2 == 0) {
+    cout << 2 * k - 1 << endl;
+    return;
+  }
+
+  cout << k + ans2 << endl;
 }
 
 int main() {
   int t = 1;
+  cin >> t;
 
   while (t--) {
     solve();

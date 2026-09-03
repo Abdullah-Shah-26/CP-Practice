@@ -28,11 +28,13 @@ static const auto fastio = []() {
 
 #define rv(a) \
   for (auto& x : (a)) cin >> x
+
 #define pv(a)                                   \
   do {                                          \
     for (const auto& x : (a)) cout << x << ' '; \
     cout << '\n';                               \
   } while (0)
+
 #define all(x) begin(x), end(x)
 #define rall(x) rbegin(x), rend(x)
 #define pb push_back
@@ -41,43 +43,47 @@ static const auto fastio = []() {
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
 #define endl '\n'
 
-/*
-==========================
-
-
-
-==========================
-*/
-
 void solve() {
-  ll n, k;
-  cin >> n >> k;
+  ll n;
+  cin >> n;
 
   vll a(n);
-  rv(a);
-
-  vll pref(n);
-  pref[0] = a[0];
-
-  for (int i = 1; i < n; i++) pref[i] = pref[i - 1] + a[i];
+  map<ll, ll> freq;
 
   ll sum = 0;
 
-  for (int i = 0; i < n - k + 1; i++) {
-    sum += pref[i + k - 1] - (i == 0 ? 0 : pref[i - 1]);
+  for (ll i = 0; i < n; i++) {
+    cin >> a[i];
+    sum += a[i];
+    freq[a[i]]++;
   }
 
-  double avg = (double)sum / (n - k + 1);
+  vll ans;
 
-  cout << fixed << setprecision(6) << avg << endl;
+  for (ll i = 0; i < n; i++) {
+    // Temporarily remove a[i]
+    freq[a[i]]--;
+
+    ll rem = sum - a[i];
+
+    if (rem % 2 == 0) {
+      ll x = rem / 2;
+
+      if (freq[x] > 0) ans.pb(i + 1);
+    }
+
+    // Restore a[i]
+    freq[a[i]]++;
+  }
+
+  cout << ans.size() << endl;
+
+  for (ll i : ans) cout << i << ' ';
+
+  cout << endl;
 }
 
 int main() {
-  int t = 1;
-
-  while (t--) {
-    solve();
-  }
-
+  solve();
   return 0;
 }

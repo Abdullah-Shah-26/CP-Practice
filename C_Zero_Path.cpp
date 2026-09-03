@@ -50,30 +50,50 @@ static const auto fastio = []() {
 */
 
 void solve() {
-  ll n, k;
-  cin >> n >> k;
+  int n, m;
+  cin >> n >> m;
 
-  vll a(n);
-  rv(a);
+  vvi a(n, vi(m));
 
-  vll pref(n);
-  pref[0] = a[0];
-
-  for (int i = 1; i < n; i++) pref[i] = pref[i - 1] + a[i];
-
-  ll sum = 0;
-
-  for (int i = 0; i < n - k + 1; i++) {
-    sum += pref[i + k - 1] - (i == 0 ? 0 : pref[i - 1]);
+  for (auto& row : a) {
+    for (auto& x : row) cin >> x;
   }
 
-  double avg = (double)sum / (n - k + 1);
+  if ((n + m - 1) & 1) {
+    cout << "NO" << endl;
+    return;
+  }
 
-  cout << fixed << setprecision(6) << avg << endl;
+  vvi mn(n, vi(m)), mx(n, vi(m));
+
+  mn[0][0] = mx[0][0] = a[0][0];
+
+  for (int j = 1; j < m; j++) {
+    mn[0][j] = mn[0][j - 1] + a[0][j];
+    mx[0][j] = mx[0][j - 1] + a[0][j];
+  }
+
+  for (int i = 1; i < n; i++) {
+    mn[i][0] = mn[i - 1][0] + a[i][0];
+    mx[i][0] = mx[i - 1][0] + a[i][0];
+  }
+
+  for (int i = 1; i < n; i++) {
+    for (int j = 1; j < m; j++) {
+      mn[i][j] = a[i][j] + min(mn[i - 1][j], mn[i][j - 1]);
+      mx[i][j] = a[i][j] + max(mx[i - 1][j], mx[i][j - 1]);
+    }
+  }
+
+  if (mn[n - 1][m - 1] <= 0 && 0 <= mx[n - 1][m - 1])
+    YES;
+  else
+    NO;
 }
 
 int main() {
   int t = 1;
+  cin >> t;
 
   while (t--) {
     solve();

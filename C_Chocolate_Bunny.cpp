@@ -39,7 +39,6 @@ static const auto fastio = []() {
 #define YES cout << "YES\n"
 #define NO cout << "NO\n"
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
-#define endl '\n'
 
 /*
 ==========================
@@ -49,27 +48,52 @@ static const auto fastio = []() {
 ==========================
 */
 
+int query(int i, int j) {
+  cout << "? " << i << " " << j << endl;
+
+  int x;
+  cin >> x;
+
+  if (x == -1) exit(0);
+
+  return x;
+}
+
 void solve() {
-  ll n, k;
-  cin >> n >> k;
+  int n;
+  cin >> n;
 
-  vll a(n);
-  rv(a);
+  vi ans(n + 1);
 
-  vll pref(n);
-  pref[0] = a[0];
+  int mx = 1;
 
-  for (int i = 1; i < n; i++) pref[i] = pref[i - 1] + a[i];
+  for (int i = 2; i <= n; i++) {
+    int a = query(mx, i); // p[mx] % p[i]
+    int b = query(i, mx); // p[i] % p[mx]
 
-  ll sum = 0;
+    // p[mx] % p[i] = p[mx] if mx is smaller
+    // p[i] % p[mx] = something but < p[mx]
+    // So max(p[mx], something < p[mx]) = p[mx]
 
-  for (int i = 0; i < n - k + 1; i++) {
-    sum += pref[i + k - 1] - (i == 0 ? 0 : pref[i - 1]);
+    if (a > b) {
+      // mx is smaller, a = p[mx]
+      ans[mx] = a;
+      mx = i;
+    } else {
+      // i is smaller,
+      ans[i] = b;
+
+      // mx remains larger
+    }
   }
 
-  double avg = (double)sum / (n - k + 1);
+  // The pos which never got assigned as its maximum
+  ans[mx] = n;
 
-  cout << fixed << setprecision(6) << avg << endl;
+  cout << "! ";
+  for (int i = 1; i <= n; i++) cout << ans[i] << " ";
+
+  cout << endl;
 }
 
 int main() {

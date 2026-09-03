@@ -50,30 +50,42 @@ static const auto fastio = []() {
 */
 
 void solve() {
-  ll n, k;
-  cin >> n >> k;
+  int n;
+  cin >> n;
 
-  vll a(n);
-  rv(a);
+  vpll caves;
 
-  vll pref(n);
-  pref[0] = a[0];
+  for (int i = 0; i < n; i++) {
+    int k;
+    cin >> k;
 
-  for (int i = 1; i < n; i++) pref[i] = pref[i - 1] + a[i];
+    ll need = 0;
 
-  ll sum = 0;
+    for (int j = 0; j < k; j++) {
+      ll armor;
+      cin >> armor;
 
-  for (int i = 0; i < n - k + 1; i++) {
-    sum += pref[i + k - 1] - (i == 0 ? 0 : pref[i - 1]);
+      need = max(need, armor - j + 1);
+    }
+
+    caves.push_back({need, k});  // [need, gain after clearing cave]
   }
 
-  double avg = (double)sum / (n - k + 1);
+  sort(all(caves));
 
-  cout << fixed << setprecision(6) << avg << endl;
+  ll gained = 0, ans = 0;
+
+  for(auto [need, gain] : caves){
+    ans = max(ans, need - gained);
+    gained += gain;
+  }
+
+  cout << ans << endl;
 }
 
 int main() {
   int t = 1;
+  cin >> t;
 
   while (t--) {
     solve();

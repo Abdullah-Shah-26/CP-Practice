@@ -50,30 +50,34 @@ static const auto fastio = []() {
 */
 
 void solve() {
-  ll n, k;
-  cin >> n >> k;
+  long long n;
+  cin >> n;
 
-  vll a(n);
-  rv(a);
+  // Snowflake size:
+  // 1 + k + k^2 + k^3 + ...
 
-  vll pref(n);
-  pref[0] = a[0];
+  for (long long k = 2; 1 + k + k * k <= n; k++) {
+    long long sum = 1 + k;   // 1 + k
+    long long term = k * k;  // k^2
 
-  for (int i = 1; i < n; i++) pref[i] = pref[i - 1] + a[i];
+    while (sum <= n) {
+      sum += term;  // add k^2, then k^3, then k^4...
 
-  ll sum = 0;
+      if (sum == n) {
+        cout << "YES\n";
+        return;
+      }
 
-  for (int i = 0; i < n - k + 1; i++) {
-    sum += pref[i + k - 1] - (i == 0 ? 0 : pref[i - 1]);
+      term *= k;  // k^2 → k^3 → k^4 → ...
+    }
   }
 
-  double avg = (double)sum / (n - k + 1);
-
-  cout << fixed << setprecision(6) << avg << endl;
+  cout << "NO\n";
 }
 
 int main() {
   int t = 1;
+  cin >> t;
 
   while (t--) {
     solve();

@@ -44,7 +44,11 @@ static const auto fastio = []() {
 /*
 ==========================
 
+Bit  3210
 
+10 = 1010
+8  = 1000
+2  = 0010
 
 ==========================
 */
@@ -56,24 +60,33 @@ void solve() {
   vll a(n);
   rv(a);
 
-  vll pref(n);
-  pref[0] = a[0];
+  vi cnt(31, 0);
 
-  for (int i = 1; i < n; i++) pref[i] = pref[i - 1] + a[i];
-
-  ll sum = 0;
-
-  for (int i = 0; i < n - k + 1; i++) {
-    sum += pref[i + k - 1] - (i == 0 ? 0 : pref[i - 1]);
+  for (int x : a) {
+    for (int j = 0; j <= 30; j++) {
+      if (x & (1 << j)) {
+        cnt[j]++;
+      }
+    }
   }
 
-  double avg = (double)sum / (n - k + 1);
+  ll ans = 0;
 
-  cout << fixed << setprecision(6) << avg << endl;
+  for (int j = 30; j >= 0; j--) {
+    int missing = (n - cnt[j]);
+
+    if (missing <= k) {
+      ans |= (1LL << j);
+      k -= missing;
+    }
+  }
+
+  cout << ans << endl;
 }
 
 int main() {
   int t = 1;
+  cin >> t;
 
   while (t--) {
     solve();

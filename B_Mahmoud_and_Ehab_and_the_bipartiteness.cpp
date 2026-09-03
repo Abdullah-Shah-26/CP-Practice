@@ -49,27 +49,44 @@ static const auto fastio = []() {
 ==========================
 */
 
+void dfs(int u, int p, vi& color, vvi& adj) {
+  for (int v : adj[u]) {
+    if (v == p) continue;
+
+    color[v] = color[u] ^ 1;
+    dfs(v, u, color, adj);
+  }
+}
+
 void solve() {
-  ll n, k;
-  cin >> n >> k;
+  int n;
+  cin >> n;
 
-  vll a(n);
-  rv(a);
+  vvi adj(n + 1);
 
-  vll pref(n);
-  pref[0] = a[0];
+  for (int i = 0; i < n - 1; i++) {
+    int u, v;
+    cin >> u >> v;
 
-  for (int i = 1; i < n; i++) pref[i] = pref[i - 1] + a[i];
-
-  ll sum = 0;
-
-  for (int i = 0; i < n - k + 1; i++) {
-    sum += pref[i + k - 1] - (i == 0 ? 0 : pref[i - 1]);
+    adj[u].pb(v);
+    adj[v].pb(u);
   }
 
-  double avg = (double)sum / (n - k + 1);
+  vi color(n + 1, -1);
+  color[1] = 0;
 
-  cout << fixed << setprecision(6) << avg << endl;
+  dfs(1, 0, color, adj);
+
+  ll cnt0 = 0, cnt1 = 0;
+
+  for (int i = 1; i <= n; i++) {
+    if (color[i] == 0)
+      cnt0++;
+    else
+      cnt1++;
+  }
+
+  cout << cnt0 * cnt1 - (n - 1) << endl;
 }
 
 int main() {

@@ -44,36 +44,50 @@ static const auto fastio = []() {
 /*
 ==========================
 
-
+sum[u] = W - B in subtree of u
 
 ==========================
 */
 
 void solve() {
-  ll n, k;
-  cin >> n >> k;
+  int n;
+  cin >> n;
 
-  vll a(n);
-  rv(a);
+  vvi adj(n + 1);
 
-  vll pref(n);
-  pref[0] = a[0];
+  for (int i = 2; i <= n; i++) {
+    int p;
+    cin >> p;
 
-  for (int i = 1; i < n; i++) pref[i] = pref[i - 1] + a[i];
-
-  ll sum = 0;
-
-  for (int i = 0; i < n - k + 1; i++) {
-    sum += pref[i + k - 1] - (i == 0 ? 0 : pref[i - 1]);
+    adj[p].pb(i);
   }
 
-  double avg = (double)sum / (n - k + 1);
+  string s;
+  cin >> s;
 
-  cout << fixed << setprecision(6) << avg << endl;
+  vi sum(n + 1);
+
+  int ans = 0;
+
+  function<void(int)> dfs = [&](int u) {
+    sum[u] = (s[u - 1] == 'W' ? 1 : -1);
+
+    for (int v : adj[u]) {
+      dfs(v);
+      sum[u] += sum[v];
+    }
+
+    if (sum[u] == 0) ans++;
+  };
+
+  dfs(1);
+
+  cout << ans << endl;
 }
 
 int main() {
   int t = 1;
+  cin >> t;
 
   while (t--) {
     solve();
