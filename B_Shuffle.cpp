@@ -50,30 +50,22 @@ static const auto fastio = []() {
 */
 
 void solve() {
-  ll n, m;
-  cin >> n >> m;
+  ll n, x, m;
+  cin >> n >> x >> m;
 
-  vll k(n + 1);
-  for (int i = 1; i <= n; i++) cin >> k[i];
+  ll L = x, R = x;
 
-  vll c(m + 1);
-  for (int i = 1; i <= m; i++) cin >> c[i];
+  while (m--) {
+    ll l, r;
+    cin >> l >> r;
 
-  sort(k.begin() + 1, k.end(), greater<ll>());
-
-  ll ans = 0;
-  ll p = 1;
-
-  for (int i = 1; i <= n; i++) {
-    if (p <= k[i] && c[p] < c[k[i]]) {
-      ans += c[p];
-      p++;
-    } else {
-      ans += c[k[i]];
+    if (l <= R && L <= r) {
+      L = min(L, l);
+      R = max(R, r);
     }
   }
 
-  cout << ans << endl;
+  cout << R - L + 1 << endl;
 }
 
 int main() {
