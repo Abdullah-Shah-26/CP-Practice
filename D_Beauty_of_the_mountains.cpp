@@ -2,126 +2,88 @@
 using namespace std;
 
 using ll = long long;
-using pii = pair<int, int>;
-using pll = pair<ll, ll>;
-using vi = vector<int>;
-using vvi = vector<vector<int>>;
-using vll = vector<ll>;
-using vvll = vector<vector<ll>>;
-using vs = vector<string>;
-using vb = vector<bool>;
-using vvb = vector<vector<bool>>;
-using vpii = vector<pii>;
-using vvpii = vector<vector<pii>>;
-using vpll = vector<pll>;
-using vvpll = vector<vector<pll>>;
 
-const int INF = 1e9;
-const ll LINF = 4e18;
-const int MOD = 1e9 + 7;
+class Solution {
+public:
+  void solve() {
+    int n, m, k;
+    cin >> n >> m >> k;
 
-static const auto fastio = []() {
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
-  return 0;
-}();
+    vector<vector<ll>> a(n, vector<ll>(m));
 
-#define rv(a) \
-  for (auto& x : (a)) cin >> x
-#define pv(a)                                   \
-  do {                                          \
-    for (const auto& x : (a)) cout << x << ' '; \
-    cout << '\n';                               \
-  } while (0)
-#define all(x) begin(x), end(x)
-#define rall(x) rbegin(x), rend(x)
-#define pb push_back
-#define YES cout << "YES\n"
-#define NO cout << "NO\n"
-#define rep(i, a, b) for (int i = (a); i < (b); ++i)
-#define endl '\n'
+    ll D = 0;
 
-/*
-==========================
-
-
-
-==========================
-*/
-
-void solve() {
-  int n, m, k;
-  cin >> n >> m >> k;
-
-  int a[n][m];
-  for (int i = 0; i < n; i++)
-    for (int j = 0; j < m; j++) cin >> a[i][j];
-
-  int type[n][m];
-  ll D = 0;  // diff = sum of ht of 0 - sum of ht of 1
-
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < m; j++) {
-      char x;
-      cin >> x;
-
-      if (x == '0') {
-        type[i][j] = 0;
-        D += a[i][j];  // Contributes to snowy
-      } else {
-        type[i][j] = 1;
-        D -= a[i][j];  // Subtracts non snowy sum
-      }
-    }
-  }
-
-  D = abs(D);
-  if (D == 0) {
-    YES;
-    return;
-  }
-
-  int G = 0;
-
-  for (int i = 0; i <= n - k; i++) {
-    int window = 0;  // balance of window (k*k)
-
-    for (int x = i; x < i + k; x++) {
-      for (int y = 0; y < k; y++) {
-        window += (type[x][y] == 0 ? 1 : -1);
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++) {
+        cin >> a[i][j];
       }
     }
 
-    G = __gcd(G, abs(window));
+    vector<string> s(n);
 
-    for (int y = 0; y <= m - k; y++) {
-      for (int x = i; x < i + k; x++) {
-        window += (type[x][y - 1] == 0 ? -1 : 1);
-        window += (type[x][y + k - 1] == 0 ? 1 : -1);
+    for (int i = 0; i < n; i++)
+      cin >> s[i];
+
+    // pref = number of 0s in the rectangle
+    // from (0,0) to (i-1,j-1)
+    vector<vector<int>> pref(n + 1, vector<int>(m + 1, 0));
+
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++) {
+
+        if (s[i][j] == '0')
+          D += a[i][j];
+        else
+          D -= a[i][j];
+
+        pref[i + 1][j + 1] =
+            pref[i][j + 1] +
+            pref[i + 1][j] -
+            pref[i][j] +
+            (s[i][j] == '0');
       }
-
-      G = __gcd(G, abs(window));
     }
 
-    if (G != 0 && D % G == 0) {
-      YES;
-      return;
-    } else {
-      NO;
-      return;
+    int g = 0;
+
+    // Try every k x k square.
+    for (int i = 0; i + k <= n; i++) {
+      for (int j = 0; j + k <= m; j++) {
+
+        // Number of zeros inside this k x k square.
+        int z = pref[i + k][j + k]
+              - pref[i][j + k]
+              - pref[i + k][j]
+              + pref[i][j];
+
+        // This square changes D by:
+        // c * (2*z - k*k)
+        int change = abs(2 * z - k * k);
+
+        g = gcd(g, change);
+      }
+    }
+
+    if (g == 0) {
+      cout << (D == 0 ? "YES\n" : "NO\n");
+    }
+    else {
+      cout << (D % g == 0 ? "YES\n" : "NO\n");
     }
   }
-
-  return;
-}
+};
 
 int main() {
-  int t = 1;
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+
+  int t;
   cin >> t;
 
-  while (t--) {
-    solve();
-  }
+  Solution sol;
+
+  while (t--)
+    sol.solve();
 
   return 0;
 }
