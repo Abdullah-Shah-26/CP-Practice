@@ -1,315 +1,603 @@
-file,folder,reason
-E_Tree_Queries.cpp,BINARY_LIFTING,ancestor jumping
-G_2_Passable_Paths_hard_version.cpp,BINARY_LIFTING,ancestor jumping
-A_Binary_Search.cpp,BINARY_SEARCH,binary search / bound query
-B_Closest_to_the_Left.cpp,BINARY_SEARCH,binary search / bound query
-B_Splitting_an_Array.cpp,BINARY_SEARCH,binary search / bound query
-C_Array_Game.cpp,BINARY_SEARCH,binary search / bound query
-C_Closest_to_the_Right.cpp,BINARY_SEARCH,binary search / bound query
-C_Cows_in_Stalls.cpp,BINARY_SEARCH,binary search / bound query
-C_Keshi_Is_Throwing_a_Party.cpp,BINARY_SEARCH,binary search / bound query
-C_Tea_Tasting.cpp,BINARY_SEARCH,binary search / bound query
-C_To_Become_Max.cpp,BINARY_SEARCH,binary search / bound query
-C_Very_Easy_Task.cpp,BINARY_SEARCH,binary search / bound query
-D_Children_Holiday.cpp,TREES,tree dfs / parent-subtree
-D_Fast_search.cpp,BINARY_SEARCH,binary search / bound query
-D_Jumping_Through_Segments.cpp,BINARY_SEARCH,binary search / bound query
-D_Minimum_maximum_on_the_Path.cpp,TREES,tree dfs / parent-subtree
-D_Reset_K_Edges.cpp,TREES,tree dfs / parent-subtree
-E_Building_an_Aquarium.cpp,BINARY_SEARCH,binary search / bound query
-E_Tracking_Segments.cpp,BINARY_SEARCH,binary search / bound query
-F_String_Game.cpp,BINARY_SEARCH,binary search / bound query
-F_Zhily_and_Cycle.cpp,BINARY_SEARCH,binary search / bound query
-G_1_Dances_Easy_version.cpp,BINARY_SEARCH,binary search / bound query
-H_Hamburgers.cpp,BINARY_SEARCH,binary search / bound query
-Maximize_the_Gap.cpp,BINARY_SEARCH,binary search / bound query
-Sushi.cpp,BINARY_SEARCH,binary search / bound query
-Tallest_at_the_Moment.cpp,BINARY_SEARCH,binary search / bound query
-A_Another_Popcount_Problem.cpp,BITWISE,xor / bit operations
-A_We_Need_the_Zero.cpp,BITWISE,xor / bit operations
-C_Nim_Game_Is_XOR_Game.cpp,BITWISE,xor / bit operations
-D_XOR_Expression_and_Two_Binary_Numbers.cpp,BITWISE,xor / bit operations
-E_Data_Structures_Fan.cpp,BITWISE,xor / bit operations
-E_The_67_th_XOR_Problem.cpp,BITWISE,xor / bit operations
-A_Marisa_Steals_Reimu_s_Takeout.cpp,COMBINATORICS,counting / permutations
-B_Crimson_Triples.cpp,COMBINATORICS,counting / permutations
-B_Luntik_and_Subsequences.cpp,COMBINATORICS,counting / permutations
-G_1_Subsequence_Addition_Easy_Version.cpp,COMBINATORICS,counting / permutations
-G_2_Subsequence_Addition_Hard_Version.cpp,COMBINATORICS,counting / permutations
-A_Copil_Copac_Draws_Trees.cpp,TREES,tree dfs / parent-subtree
-A_Parsa_s_Humongous_Tree.cpp,TREES,tree dfs / parent-subtree
-B_Kavi_on_Pairing_Duty.cpp,DP,dp / memoization
-B_Minimum_Average_Path.cpp,TREES,tree dfs / parent-subtree
-C_Baby_Ehab_Partitions_Again.cpp,DP,dp / memoization
-C_Moamen_and_XOR.cpp,DP,dp / memoization
-C_Mortal_Kombat_Tower.cpp,DP,dp / memoization
-C_Planar_Reflections.cpp,DP,dp / memoization
-C_Yarik_and_Array.cpp,DP,dp / memoization
-Celester.cpp,DP,dp / memoization
-D_Choosing_Capital_for_Treeland.cpp,TREES,tree dfs / parent-subtree
-D_Drunken_Maze.cpp,DP,dp / memoization
-D_Make_Them_Equal.cpp,DP,dp / memoization
-D_Say_No_to_Palindromes.cpp,DP,dp / memoization
-E_Block_Sequence.cpp,DP,dp / memoization
-E_Friendly_Gifts.cpp,DP,dp / memoization
-F_Simple_Cycles_Edges.cpp,TREES,tree dfs / parent-subtree
-G_Natlan_Exploring.cpp,DP,dp / memoization
-H_A_B_Knapsack.cpp,DP,dp / memoization
-A_Disjoint_Sets_Union.cpp,DSU,union find
-B_Disjoint_Sets_Union_2.cpp,DSU,union find
-C_Experience.cpp,DSU,union find
-Drop_Blocks.cpp,FENWICK_TREE,fenwick / i += i & -i
-A_Grasshopper_on_a_Line.cpp,GEOMETRY,coordinates / lines
-A_Packing_Rectangles.cpp,GEOMETRY,coordinates / lines
-B_Different_Distances.cpp,GEOMETRY,coordinates / lines
-B_Meeting_on_the_Line.cpp,GEOMETRY,coordinates / lines
-C_Arrange_the_Numbers_in_a_Circle.cpp,GEOMETRY,coordinates / lines
-C_Line_Empire.cpp,GEOMETRY,coordinates / lines
-D_Distance_in_Tree.cpp,TREES,tree dfs / parent-subtree
-D_Fixed_Point_Guessing.cpp,GEOMETRY,coordinates / lines
-Not_Covered_Points.cpp,GEOMETRY,coordinates / lines
-C_Ciel_the_Commander.cpp,GRAPH,graph traversal / shortest path
-C_Fire_Again.cpp,GRAPH,graph traversal / shortest path
-D_13_th_Labour_of_Heracles.cpp,GRAPH,graph traversal / shortest path
-D_2_doors.cpp,GRAPH,graph traversal / shortest path
-D_Lunar_New_Year_and_a_Wander.cpp,GRAPH,graph traversal / shortest path
-D_Police_Stations.cpp,GRAPH,graph traversal / shortest path
-D_Valid_BFS.cpp,GRAPH,graph traversal / shortest path
-Gift.cpp,GRAPH,graph traversal / shortest path
-Roads_and_Gates.cpp,GRAPH,graph traversal / shortest path
-16_9.cpp,GREEDY,sorting / selection
-A_AI_Project_Development.cpp,GREEDY,sorting / selection
-A_Another_Puzzle_from_Papyrus.cpp,GREEDY,sorting / selection
-A_Array_Coloring.cpp,GREEDY,sorting / selection
-A_Blocked.cpp,GREEDY,sorting / selection
-A_Convergence.cpp,GREEDY,sorting / selection
-A_Doremy_s_Paint_3.cpp,GREEDY,sorting / selection
-A_Euclid_Sequence_and_Two_Numbers.cpp,GREEDY,sorting / selection
-A_Forbidden_Integer.cpp,GREEDY,sorting / selection
-A_Get_together.cpp,GREEDY,sorting / selection
-A_Jellyfish_and_Undertale.cpp,GREEDY,sorting / selection
-A_k_Amazing_Numbers.cpp,GREEDY,sorting / selection
-A_Mainak_and_Array.cpp,GREEDY,sorting / selection
-A_New_Year_Transportation.cpp,GREEDY,sorting / selection
-A_Optimal_Purchase.cpp,GREEDY,sorting / selection
-A_Powered_Addition.cpp,GREEDY,sorting / selection
-A_The_67_th_Integer_Problem.cpp,GREEDY,sorting / selection
-A_The_Equalizer.cpp,GREEDY,sorting / selection
-Accomplice.cpp,GREEDY,sorting / selection
-Alternating_Costs.cpp,GREEDY,sorting / selection
-Armor.cpp,GREEDY,sorting / selection
-B_2_D_Traveling.cpp,GREEDY,sorting / selection
-B_AGAGA_XOOORRR.cpp,GREEDY,sorting / selection
-B_AI_Finds_Nothing_Here.cpp,GREEDY,sorting / selection
-B_Array_Cloning_Technique.cpp,GREEDY,sorting / selection
-B_Array_Walk.cpp,GREEDY,sorting / selection
-B_Bogosort.cpp,GREEDY,sorting / selection
-B_Cake_Leveling.cpp,GREEDY,sorting / selection
-B_Kalindrome_Array.cpp,GREEDY,sorting / selection
-B_Make_AP.cpp,GREEDY,sorting / selection
-B_NIT_Destroys_the_Universe.cpp,GREEDY,sorting / selection
-B_Not_Dividing.cpp,GREEDY,sorting / selection
-B_OIE_Excursion.cpp,GREEDY,sorting / selection
-B_Remilia_Plays_Soku.cpp,GREEDY,sorting / selection
-B_The_67_th_6_7_Integer_Problem.cpp,GREEDY,sorting / selection
-B_The_Meeting_Place_Cannot_Be_Changed.cpp,GREEDY,sorting / selection
-B_Valerii_Against_Everyone.cpp,GREEDY,sorting / selection
-B_Zhily_and_Mex_and_Max.cpp,GREEDY,sorting / selection
-C_2_Cirno_and_Number_Hard_Version.cpp,GREEDY,sorting / selection
-C_Division_and_Union.cpp,GREEDY,sorting / selection
-C_Interesting_Sequence copy.cpp,GREEDY,sorting / selection
-C_Kuroni_and_Impossible_Calculation.cpp,GREEDY,sorting / selection
-C_Little_Girl_and_Maximum_Sum.cpp,GREEDY,sorting / selection
-C_Nested_Segments.cpp,GREEDY,sorting / selection
-C_Number_of_Equal.cpp,GREEDY,sorting / selection
-C_Powers_Of_Two.cpp,GREEDY,sorting / selection
-C_Raspberries.cpp,GREEDY,sorting / selection
-C_Roads_in_Berland.cpp,GREEDY,sorting / selection
-C_Travelling_Salesman_Problem.cpp,GREEDY,sorting / selection
-C_Two_TVs.cpp,GREEDY,sorting / selection
-C_Vasilije_in_Cacak.cpp,GREEDY,sorting / selection
-C_Vessels_Heights_and_Two_Versions_Easy_Version.cpp,GREEDY,sorting / selection
-Crop.cpp,GREEDY,sorting / selection
-D_Balanced_Round.cpp,GREEDY,sorting / selection
-D_Brand_New_Tatar_TV_Show.cpp,GREEDY,sorting / selection
-D_River_Locks.cpp,GREEDY,sorting / selection
-D_Shocking_Arrangement.cpp,GREEDY,sorting / selection
-Dice.cpp,GREEDY,sorting / selection
-E_Anna_and_the_Valentine_s_Day_Gift.cpp,GREEDY,sorting / selection
-E_Money_Buys_Happiness.cpp,GREEDY,sorting / selection
-F_Eating_Candies.cpp,GREEDY,sorting / selection
-F_Greetings.cpp,GREEDY,sorting / selection
-G_Student_Councils.cpp,GREEDY,sorting / selection
-The_Honest_Woodcutters.cpp,GREEDY,sorting / selection
-Train_Reservation.cpp,GREEDY,sorting / selection
-Two_Rings.cpp,GREEDY,sorting / selection
-Variety.cpp,GREEDY,sorting / selection
-A_Merging_Arrays.cpp,IMPLEMENTATION,general implementation
-A_Mocha_and_Math.cpp,IMPLEMENTATION,general implementation
-A_Unit_Array.cpp,IMPLEMENTATION,general implementation
-A_Zhily_and_Array_Operating.cpp,IMPLEMENTATION,general implementation
-B_Levko_and_Array.cpp,IMPLEMENTATION,general implementation
-B_Olya_and_Game_with_Arrays.cpp,IMPLEMENTATION,general implementation
-D_Beautiful_Array.cpp,IMPLEMENTATION,general implementation
-1_1.cpp,MISC,no strong signature
-456.cpp,MISC,no strong signature
-A_AB_Balance.cpp,MISC,no strong signature
-A_AvtoBus.cpp,MISC,no strong signature
-A_Buttons.cpp,MISC,no strong signature
-A_Desorting.cpp,MISC,no strong signature
-A_Forked.cpp,MISC,no strong signature
-A_Helmets_in_Night_Light.cpp,MISC,no strong signature
-A_Make_it_White.cpp,MISC,no strong signature
-A_Make_It_Zero.cpp,MISC,no strong signature
-A_Strange_Partition.cpp,MISC,no strong signature
-A_Three_Indices.cpp,MISC,no strong signature
-A_Towers_of_Boxes.cpp,MISC,no strong signature
-A_United_We_Stand.cpp,MISC,no strong signature
-A_Walking_Master.cpp,MISC,no strong signature
-B_01_Game.cpp,MISC,no strong signature
-B_Bad_Boy.cpp,MISC,no strong signature
-B_Deja_Vu.cpp,MISC,no strong signature
-B_Eastern_Exhibition.cpp,MISC,no strong signature
-B_Fair_Numbers.cpp,MISC,no strong signature
-B_Flip_the_Bit_Easy_Version.cpp,MISC,no strong signature
-B_Maximum_Sum.cpp,MISC,no strong signature
-B_Monsters.cpp,MISC,no strong signature
-B_Multiply_by_2_divide_by_6.cpp,MISC,no strong signature
-B_Number_of_Smaller.cpp,MISC,no strong signature
-B_Odd_Grasshopper.cpp,MISC,no strong signature
-B_Ropes.cpp,MISC,no strong signature
-B_Sequence_Game.cpp,MISC,no strong signature
-B_Sum_of_Medians.cpp,MISC,no strong signature
-C_Che_city.cpp,MISC,no strong signature
-C_Grid_L.cpp,MISC,no strong signature
-C_Interesting_Sequence.cpp,MISC,no strong signature
-C_Pair_Selection.cpp,MISC,no strong signature
-C_Ski_Resort.cpp,MISC,no strong signature
-C_Test_Generator.cpp,MISC,no strong signature
-Chalkboard_Median.cpp,MISC,no strong signature
-Count_Adjacent_Cells.cpp,MISC,no strong signature
-D_505.cpp,MISC,no strong signature
-D_Deletive_Editing.cpp,MISC,no strong signature
-D_Maximum_Product_Strikes_Back.cpp,MISC,no strong signature
-D_Zhily_and_Barknights.cpp,MISC,no strong signature
-E_Equation.cpp,MISC,no strong signature
-E_liter.cpp,MISC,no strong signature
-E_Lomsat_gelral.cpp,MISC,no strong signature
-E_Segment_Sum.cpp,MISC,no strong signature
-E_Sending_a_Sequence_Over_the_Network.cpp,MISC,no strong signature
-F_Interesting_Function.cpp,MISC,no strong signature
-Fill_Rect_Query.cpp,MISC,no strong signature
-Frog_3.cpp,MISC,no strong signature
-G_Hits_Different.cpp,MISC,no strong signature
-Mod_While_Positive.cpp,MISC,no strong signature
-Plumage_Palette.cpp,MISC,no strong signature
-Repeatedly_Repainting.cpp,MISC,no strong signature
-tempCodeRunnerFile.cpp,MISC,no strong signature
-A_Exciting_Bets.cpp,NUMBER_THEORY,gcd / primes / divisors
-A_Odd_Divisor.cpp,NUMBER_THEORY,gcd / primes / divisors
-A_Orac_and_LCM.cpp,NUMBER_THEORY,gcd / primes / divisors
-A_Row_GCD.cpp,NUMBER_THEORY,gcd / primes / divisors
-A_Serval_and_Mocha_s_Array.cpp,NUMBER_THEORY,gcd / primes / divisors
-B_Longest_Divisors_Interval.cpp,NUMBER_THEORY,gcd / primes / divisors
-B_Make_It_Increasing.cpp,NUMBER_THEORY,gcd / primes / divisors
-B_Permutation_Swap.cpp,NUMBER_THEORY,gcd / primes / divisors
-C_Factorials_and_Powers_of_Two.cpp,NUMBER_THEORY,gcd / primes / divisors
-C_Grouping_Increases.cpp,NUMBER_THEORY,gcd / primes / divisors
-C_Partitioning_the_Array.cpp,NUMBER_THEORY,gcd / primes / divisors
-C_Smilo_and_Monsters.cpp,NUMBER_THEORY,gcd / primes / divisors
-D_CGCDSSQ.cpp,NUMBER_THEORY,gcd / primes / divisors
-D_Count_GCD.cpp,NUMBER_THEORY,gcd / primes / divisors
-D_Divisibility_Game.cpp,NUMBER_THEORY,gcd / primes / divisors
-D_Storming_Arasaka.cpp,NUMBER_THEORY,gcd / primes / divisors
-D_The_67_th_OEIS_Problem.cpp,NUMBER_THEORY,gcd / primes / divisors
-D_Triangle_Coloring.cpp,NUMBER_THEORY,gcd / primes / divisors
-G_1_Teleporters_Easy_Version.cpp,NUMBER_THEORY,gcd / primes / divisors
-L_Controllers.cpp,NUMBER_THEORY,gcd / primes / divisors
-B_250_Thousand_Tons_of_TNT.cpp,PREFIX_SUM,prefix accumulation
-B_Collecting_Game.cpp,PREFIX_SUM,prefix accumulation
-D_Black_and_White_Stripe.cpp,PREFIX_SUM,prefix accumulation
-D_Decidophobia.cpp,PREFIX_SUM,prefix accumulation
-D_Odd_Queries.cpp,PREFIX_SUM,prefix accumulation
-A_Lorenzo_Von_Matterhorn.cpp,SEGMENT_TREE,segment tree / lazy propagation
-D_Penchick_and_Desert_Rabbit.cpp,TREES,tree dfs / parent-subtree
-D_Water_Tree.cpp,TREES,tree dfs / parent-subtree
-E_A_and_B_and_Lecture_Rooms.cpp,BINARY_LIFTING,ancestor jumping
-E_Danil_and_a_Part_time_Job.cpp,TREES,tree dfs / parent-subtree
-E_New_Year_Tree.cpp,TREES,tree dfs / parent-subtree
-E_Xenia_and_Tree.cpp,TREES,tree dfs / parent-subtree
-F_Maximum_modulo_equality.cpp,SEGMENT_TREE,segment tree / lazy propagation
-459.cpp,STRINGS,string / palindrome / pattern
-A_Balanced_Bitstring.cpp,STRINGS,string / palindrome / pattern
-A_Don_t_Try_to_Count.cpp,STRINGS,string / palindrome / pattern
-A_Iris_and_Game_on_the_Tree.cpp,TREES,tree dfs / parent-subtree
-A_Reverse_a_Substring.cpp,STRINGS,string / palindrome / pattern
-Adjacent_Distinct_String.cpp,STRINGS,string / palindrome / pattern
-B_Beautiful_Numbers.cpp,STRINGS,string / palindrome / pattern
-B_Chemistry.cpp,STRINGS,string / palindrome / pattern
-B_Comparison_String.cpp,STRINGS,string / palindrome / pattern
-B_Digit_String.cpp,STRINGS,string / palindrome / pattern
-B_Make_it_Divisible_by_25.cpp,STRINGS,string / palindrome / pattern
-B_Palindrome_Twelve_and_Two_Terms.cpp,STRINGS,string / palindrome / pattern
-B_Password.cpp,TREES,tree dfs / parent-subtree
-B_String_Problem.cpp,STRINGS,string / palindrome / pattern
-B_Swap_and_Delete.cpp,STRINGS,string / palindrome / pattern
-C_1_Cirno_and_Number_Easy_Version.cpp,STRINGS,string / palindrome / pattern
-C_1_Seating_Arrangement_Easy_Version.cpp,STRINGS,string / palindrome / pattern
-C_2_Seating_Arrangement_Hard_Version.cpp,STRINGS,string / palindrome / pattern
-C_Cost_of_a_Bracket_Sequence.cpp,STRINGS,string / palindrome / pattern
-C_Decreasing_String.cpp,STRINGS,string / palindrome / pattern
-C_Flexible_String.cpp,STRINGS,string / palindrome / pattern
-C_Fox_And_Names.cpp,STRINGS,string / palindrome / pattern
-C_Good_Subarrays.cpp,STRINGS,string / palindrome / pattern
-C_Palindrome_Basis.cpp,STRINGS,string / palindrome / pattern
-C_Stands_for_Center.cpp,STRINGS,string / palindrome / pattern
-C_The_Fair_Nut_and_String.cpp,STRINGS,string / palindrome / pattern
-C_Zhily_and_Bracket_Swapping.cpp,STRINGS,string / palindrome / pattern
-Chompers.cpp,STRINGS,string / palindrome / pattern
-Count_Subgrid_Sum_K.cpp,STRINGS,string / palindrome / pattern
-Decisive_Battle.cpp,STRINGS,string / palindrome / pattern
-E_1_Erase_and_Extend_Easy_Version.cpp,STRINGS,string / palindrome / pattern
-E_Good_Triples.cpp,STRINGS,string / palindrome / pattern
-E_Pig_and_Palindromes.cpp,STRINGS,string / palindrome / pattern
-Endless_Holidays.cpp,STRINGS,string / palindrome / pattern
-F_Graph_Without_Long_Directed_Paths.cpp,STRINGS,string / palindrome / pattern
-Hell_World.cpp,STRINGS,string / palindrome / pattern
-Not_Adjacent_2.cpp,STRINGS,string / palindrome / pattern
-Secret_Numbers.cpp,STRINGS,string / palindrome / pattern
-A_Linova_and_the_Kingdom.cpp,TREES,tree dfs / parent-subtree
-B_Appleman_and_Tree.cpp,TREES,tree dfs / parent-subtree
-B_Fish_Graph.cpp,TREES,tree dfs / parent-subtree
-C_Cut_em_all.cpp,TREES,tree dfs / parent-subtree
-C_Kefa_and_Park.cpp,TREES,tree dfs / parent-subtree
-C_Tree_Pruning.cpp,TREES,tree dfs / parent-subtree
-C_Village_Guilds.cpp,TREES,tree dfs / parent-subtree
-D_The_Number_of_Imposters.cpp,TREES,tree dfs / parent-subtree
-E_Fairy.cpp,TREES,tree dfs / parent-subtree
-E_Round_Dance.cpp,TREES,tree dfs / parent-subtree
-F_Maximum_White_Subtree.cpp,TREES,tree dfs / parent-subtree
-F_Tourist_Reform.cpp,TREES,tree dfs / parent-subtree
-F_Tree_with_Maximum_Cost.cpp,TREES,tree dfs / parent-subtree
-G_Josephus_Problem_2.cpp,TREES,tree dfs / parent-subtree
-A_Looped_Playlist.cpp,TWO_POINTERS,sliding window / two pointers
-A_Maximum_Average_Segment.cpp,TWO_POINTERS,sliding window / two pointers
-A_Pride.cpp,TWO_POINTERS,sliding window / two pointers
-A_Segment_with_Small_Sum.cpp,TWO_POINTERS,sliding window / two pointers
-B_Basketball_Together.cpp,TWO_POINTERS,sliding window / two pointers
-B_Segment_with_Big_Sum.cpp,TWO_POINTERS,sliding window / two pointers
-B_Total_Length.cpp,TWO_POINTERS,sliding window / two pointers
-C_Coloring_Trees.cpp,TREES,tree dfs / parent-subtree
-C_Equal_Frequencies.cpp,TWO_POINTERS,sliding window / two pointers
-C_Number_of_Segments_with_Small_Sum.cpp,TWO_POINTERS,sliding window / two pointers
-C_The_67_th_Permutation_Problem.cpp,TWO_POINTERS,sliding window / two pointers
-D_Number_of_Segments_with_Big_Sum.cpp,TWO_POINTERS,sliding window / two pointers
-D_Small_GCD.cpp,TWO_POINTERS,sliding window / two pointers
-D_Stylish_clothes.cpp,TWO_POINTERS,sliding window / two pointers
-E_Advertising_Agency.cpp,TWO_POINTERS,sliding window / two pointers
-E_Knapsack_on_a_Segment.cpp,TWO_POINTERS,sliding window / two pointers
-E_Segments_with_Small_Set.cpp,TWO_POINTERS,sliding window / two pointers
-F_Card_Substrings.cpp,TWO_POINTERS,sliding window / two pointers
-F_Segments_with_Small_Spread.cpp,TWO_POINTERS,sliding window / two pointers
-G_Coprime_Segment.cpp,TWO_POINTERS,sliding window / two pointers
-G_Not_Very_Rude_Substring.cpp,TWO_POINTERS,sliding window / two pointers
-I_Segment_with_the_Required_Subset.cpp,TWO_POINTERS,sliding window / two pointers
-Not_Adjacent.cpp,TWO_POINTERS,sliding window / two pointers
+﻿file,folder,reason
+"A_Array_Elimination.cpp",ARRAYS,"array / sequence / matrix"
+"A_farmpiggie_and_Subset_Sum.cpp",ARRAYS,"array / sequence / matrix"
+"A_Min_Max_Game.cpp",ARRAYS,"array / sequence / matrix"
+"A_Weird_Sum.cpp",ARRAYS,"array / sequence / matrix"
+"B_Array_merging.cpp",ARRAYS,"array / sequence / matrix"
+"B_Average_Sleep_Time.cpp",ARRAYS,"array / sequence / matrix"
+"B_Beautiful_Array.cpp",ARRAYS,"array / sequence / matrix"
+"B_ezraft_and_Array.cpp",ARRAYS,"array / sequence / matrix"
+"B_Fun_with_Even_Subarrays.cpp",ARRAYS,"array / sequence / matrix"
+"B_Gardener_and_the_Array.cpp",ARRAYS,"array / sequence / matrix"
+"B_M_arrays.cpp",ARRAYS,"array / sequence / matrix"
+"B_Merge_to_Match.cpp",ARRAYS,"array / sequence / matrix"
+"B_Shuffle.cpp",ARRAYS,"array / sequence / matrix"
+"B_Zero_Array.cpp",ARRAYS,"array / sequence / matrix"
+"C_0_mar_and_Alternating_Sums.cpp",ARRAYS,"array / sequence / matrix"
+"C_Assembly_via_Minimums.cpp",ARRAYS,"array / sequence / matrix"
+"C_Differential_Sorting.cpp",ARRAYS,"array / sequence / matrix"
+"C_Even_Subarrays.cpp",ARRAYS,"array / sequence / matrix"
+"C_Good_Array.cpp",ARRAYS,"array / sequence / matrix"
+"C_Paint_the_Array.cpp",ARRAYS,"array / sequence / matrix"
+"C_Sum_of_Distinct_Values_in_a_Matrix.cpp",ARRAYS,"array / sequence / matrix"
+"D_Array_Replacement.cpp",ARRAYS,"array / sequence / matrix"
+"D_diss_quack_and_Array_Game.cpp",ARRAYS,"array / sequence / matrix"
+"D_Fixed_Prefix_Permutations.cpp",ARRAYS,"array / sequence / matrix"
+"D_Plus_Minus_Permutation.cpp",ARRAYS,"array / sequence / matrix"
+"D_Signs_of_Prefix_Sums.cpp",ARRAYS,"array / sequence / matrix"
+"D_Zero_Remainder_Array.cpp",ARRAYS,"array / sequence / matrix"
+"G_Restore_the_Permutation.cpp",ARRAYS,"array / sequence / matrix"
+"K_Divisible_Subarrays.cpp",ARRAYS,"array / sequence / matrix"
+"Min_Max_Swap.cpp",ARRAYS,"array / sequence / matrix"
+"Second_Half_Sum.cpp",ARRAYS,"array / sequence / matrix"
+"Sum_of_Square_of_Sum.cpp",ARRAYS,"array / sequence / matrix"
+"A_Binary_Search.cpp",BINARY_SEARCH,"binary search / bound query"
+"B_Closest_to_the_Left.cpp",BINARY_SEARCH,"binary search / bound query"
+"B_Splitting_an_Array.cpp",BINARY_SEARCH,"binary search / bound query"
+"C_Array_Game.cpp",BINARY_SEARCH,"binary search / bound query"
+"C_Closest_to_the_Right.cpp",BINARY_SEARCH,"binary search / bound query"
+"C_Cows_in_Stalls.cpp",BINARY_SEARCH,"binary search / bound query"
+"C_Keshi_Is_Throwing_a_Party.cpp",BINARY_SEARCH,"binary search / bound query"
+"C_Tea_Tasting.cpp",BINARY_SEARCH,"binary search / bound query"
+"C_To_Become_Max.cpp",BINARY_SEARCH,"binary search / bound query"
+"C_Very_Easy_Task.cpp",BINARY_SEARCH,"binary search / bound query"
+"D_Fast_search.cpp",BINARY_SEARCH,"binary search / bound query"
+"D_Jumping_Through_Segments.cpp",BINARY_SEARCH,"binary search / bound query"
+"E_Building_an_Aquarium.cpp",BINARY_SEARCH,"binary search / bound query"
+"E_Tracking_Segments.cpp",BINARY_SEARCH,"binary search / bound query"
+"F_String_Game.cpp",BINARY_SEARCH,"binary search / bound query"
+"F_Zhily_and_Cycle.cpp",BINARY_SEARCH,"binary search / bound query"
+"G_1_Dances_Easy_version.cpp",BINARY_SEARCH,"binary search / bound query"
+"H_Hamburgers.cpp",BINARY_SEARCH,"binary search / bound query"
+"Maximize_the_Gap.cpp",BINARY_SEARCH,"binary search / bound query"
+"Sushi.cpp",BINARY_SEARCH,"binary search / bound query"
+"Tallest_at_the_Moment.cpp",BINARY_SEARCH,"binary search / bound query"
+"A_Another_Popcount_Problem.cpp",BITWISE,"bitwise / XOR / AND"
+"A_We_Need_the_Zero.cpp",BITWISE,"bitwise / XOR / AND"
+"B_AND_0_Sum_Big.cpp",BITWISE,"bitwise / XOR / AND"
+"B_AND_Sequences.cpp",BITWISE,"bitwise / XOR / AND"
+"C_Maximize_XOR_Minimize_Operations.cpp",BITWISE,"bitwise / XOR / AND"
+"C_Nim_Game_Is_XOR_Game.cpp",BITWISE,"bitwise / XOR / AND"
+"D_Sum_of_XOR_Functions.cpp",BITWISE,"bitwise / XOR / AND"
+"D_XOR_Expression_and_Two_Binary_Numbers.cpp",BITWISE,"bitwise / XOR / AND"
+"E_Data_Structures_Fan.cpp",BITWISE,"bitwise / XOR / AND"
+"E_The_67_th_XOR_Problem.cpp",BITWISE,"bitwise / XOR / AND"
+"F_XORificator_3000.cpp",BITWISE,"bitwise / XOR / AND"
+"H_Maximal_AND.cpp",BITWISE,"bitwise / XOR / AND"
+"A_Marisa_Steals_Reimu_s_Takeout.cpp",COMBINATORICS,"counting / permutations"
+"B_Crimson_Triples.cpp",COMBINATORICS,"counting / permutations"
+"B_Luntik_and_Subsequences.cpp",COMBINATORICS,"counting / permutations"
+"D_Exam_in_MAC.cpp",COMBINATORICS,"counting / permutations"
+"G_1_Subsequence_Addition_Easy_Version.cpp",COMBINATORICS,"counting / permutations"
+"G_2_Subsequence_Addition_Hard_Version.cpp",COMBINATORICS,"counting / permutations"
+"Parking_2.cpp",CONSTRUCTIVE,"constructive algorithm"
+"X_to_Y.cpp",CONSTRUCTIVE,"constructive algorithm"
+"A_Boredom.cpp",DP,"dynamic programming"
+"B_GCD_Partition.cpp",DP,"dynamic programming"
+"B_Kavi_on_Pairing_Duty.cpp",DP,"dynamic programming"
+"C_Baby_Ehab_Partitions_Again.cpp",DP,"dynamic programming"
+"C_Make_it_Alternating.cpp",DP,"dynamic programming"
+"C_Moamen_and_XOR.cpp",DP,"dynamic programming"
+"C_Mortal_Kombat_Tower.cpp",DP,"dynamic programming"
+"C_Planar_Reflections.cpp",DP,"dynamic programming"
+"C_Scoring_Subsequences.cpp",DP,"dynamic programming"
+"C_Yarik_and_Array.cpp",DP,"dynamic programming"
+"Celester.cpp",DP,"dynamic programming"
+"D_Drunken_Maze.cpp",DP,"dynamic programming"
+"D_Make_Them_Equal.cpp",DP,"dynamic programming"
+"D_Say_No_to_Palindromes.cpp",DP,"dynamic programming"
+"D_Substring.cpp",DP,"dynamic programming"
+"D_The_Maths_Lecture.cpp",DP,"dynamic programming"
+"Digit_Circus.cpp",DP,"dynamic programming"
+"E_Block_Sequence.cpp",DP,"dynamic programming"
+"E_Friendly_Gifts.cpp",DP,"dynamic programming"
+"F_Clear_the_String.cpp",DP,"dynamic programming"
+"F_Consecutive_Subsequence.cpp",DP,"dynamic programming"
+"G_Natlan_Exploring.cpp",DP,"dynamic programming"
+"H_A_B_Knapsack.cpp",DP,"dynamic programming"
+"A_Disjoint_Sets_Union.cpp",DSU,"disjoint set union"
+"B_Disjoint_Sets_Union_2.cpp",DSU,"disjoint set union"
+"C_Experience.cpp",DSU,"disjoint set union"
+"Drop_Blocks.cpp",FENWICK_TREE,"Fenwick tree"
+"M_Minimum_LCM.cpp",FENWICK_TREE,"Fenwick tree"
+"A_Grasshopper_on_a_Line.cpp",GEOMETRY,"coordinates / geometry"
+"A_Packing_Rectangles.cpp",GEOMETRY,"coordinates / geometry"
+"B_Count_Subrectangles.cpp",GEOMETRY,"coordinates / geometry"
+"B_Different_Distances.cpp",GEOMETRY,"coordinates / geometry"
+"B_Meeting_on_the_Line.cpp",GEOMETRY,"coordinates / geometry"
+"B_Most_socially_distanced_subsequence.cpp",GEOMETRY,"coordinates / geometry"
+"B_Triangles_on_a_Rectangle.cpp",GEOMETRY,"coordinates / geometry"
+"C_Arrange_the_Numbers_in_a_Circle.cpp",GEOMETRY,"coordinates / geometry"
+"C_Count_Triangles.cpp",GEOMETRY,"coordinates / geometry"
+"C_Line_Empire.cpp",GEOMETRY,"coordinates / geometry"
+"D_Bermuda_Rectangle.cpp",GEOMETRY,"coordinates / geometry"
+"D_Fixed_Point_Guessing.cpp",GEOMETRY,"coordinates / geometry"
+"Not_Covered_Points.cpp",GEOMETRY,"coordinates / geometry"
+"Walk_the_Line.cpp",GEOMETRY,"coordinates / geometry"
+"C_Checkposts.cpp",GRAPH,"graph traversal / shortest path"
+"C_Ciel_the_Commander.cpp",GRAPH,"graph traversal / shortest path"
+"C_Fire_Again.cpp",GRAPH,"graph traversal / shortest path"
+"C_Rumor.cpp",GRAPH,"graph traversal / shortest path"
+"C_Virus.cpp",GRAPH,"graph traversal / shortest path"
+"D_13_th_Labour_of_Heracles.cpp",GRAPH,"graph traversal / shortest path"
+"D_2_doors.cpp",GRAPH,"graph traversal / shortest path"
+"D_Flood_Fill.cpp",GRAPH,"graph traversal / shortest path"
+"D_Lunar_New_Year_and_a_Wander.cpp",GRAPH,"graph traversal / shortest path"
+"D_Nearest_Excluded_Points.cpp",GRAPH,"graph traversal / shortest path"
+"D_Police_Stations.cpp",GRAPH,"graph traversal / shortest path"
+"D_Valid_BFS.cpp",GRAPH,"graph traversal / shortest path"
+"E_Nearest_Opposite_Parity.cpp",GRAPH,"graph traversal / shortest path"
+"G_Bicycles.cpp",GRAPH,"graph traversal / shortest path"
+"Gift.cpp",GRAPH,"graph traversal / shortest path"
+"Roads_and_Gates.cpp",GRAPH,"graph traversal / shortest path"
+"16_9.cpp",GREEDY,"greedy choice / sorting"
+"A_AI_Project_Development.cpp",GREEDY,"greedy choice / sorting"
+"A_Another_Puzzle_from_Papyrus.cpp",GREEDY,"greedy choice / sorting"
+"A_Array_Coloring.cpp",GREEDY,"greedy choice / sorting"
+"A_Blocked.cpp",GREEDY,"greedy choice / sorting"
+"A_Buying_Torches.cpp",GREEDY,"greedy choice / sorting"
+"A_Convergence.cpp",GREEDY,"greedy choice / sorting"
+"A_Doremy_s_Paint_3.cpp",GREEDY,"greedy choice / sorting"
+"A_Euclid_Sequence_and_Two_Numbers.cpp",GREEDY,"greedy choice / sorting"
+"A_Forbidden_Integer.cpp",GREEDY,"greedy choice / sorting"
+"A_Get_together.cpp",GREEDY,"greedy choice / sorting"
+"A_Jellyfish_and_Undertale.cpp",GREEDY,"greedy choice / sorting"
+"A_k_Amazing_Numbers.cpp",GREEDY,"greedy choice / sorting"
+"A_Mainak_and_Array.cpp",GREEDY,"greedy choice / sorting"
+"A_New_Year_Transportation.cpp",GREEDY,"greedy choice / sorting"
+"A_Optimal_Purchase.cpp",GREEDY,"greedy choice / sorting"
+"A_Powered_Addition.cpp",GREEDY,"greedy choice / sorting"
+"A_Shohag_Loves_Mod.cpp",GREEDY,"greedy choice / sorting"
+"A_Strange_Birthday_Party.cpp",GREEDY,"greedy choice / sorting"
+"A_The_67_th_Integer_Problem.cpp",GREEDY,"greedy choice / sorting"
+"A_The_Equalizer.cpp",GREEDY,"greedy choice / sorting"
+"Accomplice.cpp",GREEDY,"greedy choice / sorting"
+"Alternating_Costs.cpp",GREEDY,"greedy choice / sorting"
+"Armor.cpp",GREEDY,"greedy choice / sorting"
+"B_2_D_Traveling.cpp",GREEDY,"greedy choice / sorting"
+"B_AGAGA_XOOORRR.cpp",GREEDY,"greedy choice / sorting"
+"B_AI_Finds_Nothing_Here.cpp",GREEDY,"greedy choice / sorting"
+"B_Array_Cloning_Technique.cpp",GREEDY,"greedy choice / sorting"
+"B_Array_Walk.cpp",GREEDY,"greedy choice / sorting"
+"B_Bogosort.cpp",GREEDY,"greedy choice / sorting"
+"B_Cake_Leveling.cpp",GREEDY,"greedy choice / sorting"
+"B_Kalindrome_Array.cpp",GREEDY,"greedy choice / sorting"
+"B_Make_AP.cpp",GREEDY,"greedy choice / sorting"
+"B_NIT_Destroys_the_Universe.cpp",GREEDY,"greedy choice / sorting"
+"B_Not_Dividing.cpp",GREEDY,"greedy choice / sorting"
+"B_OIE_Excursion.cpp",GREEDY,"greedy choice / sorting"
+"B_Remilia_Plays_Soku.cpp",GREEDY,"greedy choice / sorting"
+"B_The_67_th_6_7_Integer_Problem.cpp",GREEDY,"greedy choice / sorting"
+"B_The_Meeting_Place_Cannot_Be_Changed.cpp",GREEDY,"greedy choice / sorting"
+"B_Valerii_Against_Everyone.cpp",GREEDY,"greedy choice / sorting"
+"B_Zhily_and_Mex_and_Max.cpp",GREEDY,"greedy choice / sorting"
+"C_2_Cirno_and_Number_Hard_Version.cpp",GREEDY,"greedy choice / sorting"
+"C_Division_and_Union.cpp",GREEDY,"greedy choice / sorting"
+"C_Interesting_Sequence copy.cpp",GREEDY,"greedy choice / sorting"
+"C_Kuroni_and_Impossible_Calculation.cpp",GREEDY,"greedy choice / sorting"
+"C_Little_Girl_and_Maximum_Sum.cpp",GREEDY,"greedy choice / sorting"
+"C_Nested_Segments.cpp",GREEDY,"greedy choice / sorting"
+"C_Number_of_Equal.cpp",GREEDY,"greedy choice / sorting"
+"C_Powers_Of_Two.cpp",GREEDY,"greedy choice / sorting"
+"C_Raspberries.cpp",GREEDY,"greedy choice / sorting"
+"C_Roads_in_Berland.cpp",GREEDY,"greedy choice / sorting"
+"C_Schedule_Management.cpp",GREEDY,"greedy choice / sorting"
+"C_Travelling_Salesman_Problem.cpp",GREEDY,"greedy choice / sorting"
+"C_Two_TVs.cpp",GREEDY,"greedy choice / sorting"
+"C_Vasilije_in_Cacak.cpp",GREEDY,"greedy choice / sorting"
+"C_Vessels_Heights_and_Two_Versions_Easy_Version.cpp",GREEDY,"greedy choice / sorting"
+"Cookies_and_Greedy_Takahashi.cpp",GREEDY,"greedy choice / sorting"
+"Crop.cpp",GREEDY,"greedy choice / sorting"
+"D_Balanced_Round.cpp",GREEDY,"greedy choice / sorting"
+"D_Brand_New_Tatar_TV_Show.cpp",GREEDY,"greedy choice / sorting"
+"D_Buying_Shovels.cpp",GREEDY,"greedy choice / sorting"
+"D_Friends_and_the_Restaurant.cpp",GREEDY,"greedy choice / sorting"
+"D_River_Locks.cpp",GREEDY,"greedy choice / sorting"
+"D_Shocking_Arrangement.cpp",GREEDY,"greedy choice / sorting"
+"D_Three_Activities.cpp",GREEDY,"greedy choice / sorting"
+"Dice.cpp",GREEDY,"greedy choice / sorting"
+"E_Anna_and_the_Valentine_s_Day_Gift.cpp",GREEDY,"greedy choice / sorting"
+"E_Money_Buys_Happiness.cpp",GREEDY,"greedy choice / sorting"
+"F_Eating_Candies.cpp",GREEDY,"greedy choice / sorting"
+"F_Greetings.cpp",GREEDY,"greedy choice / sorting"
+"G_Student_Councils.cpp",GREEDY,"greedy choice / sorting"
+"The_Honest_Woodcutters.cpp",GREEDY,"greedy choice / sorting"
+"Train_Reservation.cpp",GREEDY,"greedy choice / sorting"
+"Two_Rings.cpp",GREEDY,"greedy choice / sorting"
+"Variety.cpp",GREEDY,"greedy choice / sorting"
+"A_Add_and_Divide.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Adding_Digits.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Arpa_s_hard_exam_and_Mehrdad_s_naive_cheat.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Bigrams.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Boss_Fight.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Counting_Orders.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Flipping_Game.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Johnny_and_Ancient_Computer.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Journey_Planning.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_King_Escape.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Merging_Arrays.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Mocha_and_Math.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Monocarp_s_Contest.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Odd_Eraser.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Polycarp_s_Pockets.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Protect_Sheep.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Red_Versus_Blue.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Rumb_Needs_a_Hand.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_The_Best_Card.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Unit_Array.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_You_Delete_I_Delete.cpp",IMPLEMENTATION,"implementation / simulation"
+"A_Zhily_and_Array_Operating.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_1_Carrot_Chopdown_Easy_Version.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_2_Carrot_Chopdown_Hard_Version.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Always_Changing.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Alyona_and_a_Narrow_Fridge.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Balanced_Tunnel.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Box_Fitting.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Cat_Cycle.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Divan_and_a_New_Project.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Domino_Tiles.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Dreamoon_and_WiFi.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Flip_the_Bits.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Fortune_Telling.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Gigantomachy.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Hossam_and_Friends.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Hypercarp_and_the_Control_Panel.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_JoJo_s_Incredible_Adventures.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Just_Eat_It.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Kill_Demodogs.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Knife_s_Pill_Farm.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Levko_and_Array.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Li_Hua_and_Pattern.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Little_Pony_and_Harmony_Chest.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Luke_is_a_Foodie.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Lunatic_Never_Content.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Mahmoud_and_Ehab_and_the_bipartiteness.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Make_Almost_Equal_With_Mod.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_MEXor_Mixup.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Min_Matrices.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Monocarp_and_Projects.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Move_and_Turn.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Neutral_Tonality.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Olya_and_Game_with_Arrays.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Omkar_and_Last_Class_of_Math.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Orac_and_Models.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Playing_in_a_Casino.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Pleasant_Pairs.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Predominant_Frequency_Division.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Preparing_Olympiad.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Prinzessin_der_Verurteilung.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Rock_and_Lever.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Roof_Construction.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Sherlock_and_his_girlfriend.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Shoe_Shuffling.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Stone_Age_Problem.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Subtract_Operation.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Tape.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Tenzing_and_Books.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_The_Butcher.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Vika_and_the_Bridge.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Z_mod_X_C.cpp",IMPLEMENTATION,"implementation / simulation"
+"B_Zuma.cpp",IMPLEMENTATION,"implementation / simulation"
+"Bomber_Mad.cpp",IMPLEMENTATION,"implementation / simulation"
+"Break_a_Stick.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_1_Floor_of_MEX_Easy_Version.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Ball_in_Berland.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Basketball_Exercise.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Berland_Regional.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Chat_Ban.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Chocolate_Bunny.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Contrast_Value.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Deep_Down_Below.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Dolce_Vita.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Dora_and_Search.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Ehab_and_Path_etic_MEXs.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Far_Cities.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Grandma_Capa_Knits_a_Scarf.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Hard_problem.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Hot_Potatoes_at_the_Fairy_Warehouse.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Johnny_and_Another_Rating_Drop.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Madamant_s_Skating_Dynasty.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Make_Them_Equal.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Maximize_the_Score.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Move_Brackets.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_News_Distribution.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Queen.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Quiz_Master.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Removing_Smallest_Multiples.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Risky_Tower.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Road_Optimization.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Shaass_and_Lights.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Stable_Groups.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_The_Sports_Festival.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Traffic_Light.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Unstable_Elements.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Yet_Another_Card_Deck.cpp",IMPLEMENTATION,"implementation / simulation"
+"C_Zero_Path.cpp",IMPLEMENTATION,"implementation / simulation"
+"Change.cpp",IMPLEMENTATION,"implementation / simulation"
+"Change_Schools.cpp",IMPLEMENTATION,"implementation / simulation"
+"Chargers.cpp",IMPLEMENTATION,"implementation / simulation"
+"Coefficient_Stair.cpp",IMPLEMENTATION,"implementation / simulation"
+"Compromise.cpp",IMPLEMENTATION,"implementation / simulation"
+"Concat_maximize.cpp",IMPLEMENTATION,"implementation / simulation"
+"Count_Close_Pairs.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_A_Ribbon_for_Tomorrow.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Absolute_Beauty.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Beautiful_Array.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Beauty_of_the_mountains.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Bracket_Coloring.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Candy_Box_easy_version.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Distinct_Split.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Districts_Connection.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Divide_and_Equalize.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Divisible_Pairs.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Dr_Agos_s_Dark_Mode.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Find_the_Different_Ones.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Kefa_and_Dishes.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Make_It_Round.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Matryoshkas.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Meta_set.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Running_Miles.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Same_Differences.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Strong_Vertices.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Swap_Dilemma.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Three_Logos.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Training_Session.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Yet_Another_Problem.cpp",IMPLEMENTATION,"implementation / simulation"
+"D_Zero_Quantity_Maximization.cpp",IMPLEMENTATION,"implementation / simulation"
+"E_1_Rudolf_and_Snowflakes_simple_version.cpp",IMPLEMENTATION,"implementation / simulation"
+"E_Arranging_The_Sheep.cpp",IMPLEMENTATION,"implementation / simulation"
+"E_Binary_Deque.cpp",IMPLEMENTATION,"implementation / simulation"
+"E_Busy_Beaver.cpp",IMPLEMENTATION,"implementation / simulation"
+"E_Cardboard_for_Pictures.cpp",IMPLEMENTATION,"implementation / simulation"
+"E_Iva_Pav.cpp",IMPLEMENTATION,"implementation / simulation"
+"E_Mirror_Grid.cpp",IMPLEMENTATION,"implementation / simulation"
+"E_Rendez_vous_de_Marian_et_Robin.cpp",IMPLEMENTATION,"implementation / simulation"
+"E_Romantic_Glasses.cpp",IMPLEMENTATION,"implementation / simulation"
+"E_Scuza.cpp",IMPLEMENTATION,"implementation / simulation"
+"F_Chat_Screenshots.cpp",IMPLEMENTATION,"implementation / simulation"
+"F_Easy_Demon_Problem.cpp",IMPLEMENTATION,"implementation / simulation"
+"F_Ira_and_Flamenco.cpp",IMPLEMENTATION,"implementation / simulation"
+"F_Yet_Another_Problem_About_Pairs_Satisfying_an_Inequality.cpp",IMPLEMENTATION,"implementation / simulation"
+"Fizz.cpp",IMPLEMENTATION,"implementation / simulation"
+"G_1_Magic_Triples_Easy_Version.cpp",IMPLEMENTATION,"implementation / simulation"
+"G_1_Ruler_easy_version.cpp",IMPLEMENTATION,"implementation / simulation"
+"G_2_Magic_Triples_Hard_Version.cpp",IMPLEMENTATION,"implementation / simulation"
+"G_2_Ruler_hard_version.cpp",IMPLEMENTATION,"implementation / simulation"
+"G_2_Sort.cpp",IMPLEMENTATION,"implementation / simulation"
+"G_SlavicG_s_Favorite_Problem.cpp",IMPLEMENTATION,"implementation / simulation"
+"H_Don_t_Blame_Me.cpp",IMPLEMENTATION,"implementation / simulation"
+"H_Gambling.cpp",IMPLEMENTATION,"implementation / simulation"
+"Inc_Dec_Xor.cpp",IMPLEMENTATION,"implementation / simulation"
+"Inverse_and_Swap.cpp",IMPLEMENTATION,"implementation / simulation"
+"mnclr.cpp",IMPLEMENTATION,"implementation / simulation"
+"Monocolor.cpp",IMPLEMENTATION,"implementation / simulation"
+"Nine_or_Nein.cpp",IMPLEMENTATION,"implementation / simulation"
+"Odd_Cycle.cpp",IMPLEMENTATION,"implementation / simulation"
+"Old_Maid.cpp",IMPLEMENTATION,"implementation / simulation"
+"On_a_Diet.cpp",IMPLEMENTATION,"implementation / simulation"
+"Placing_Rooks.cpp",IMPLEMENTATION,"implementation / simulation"
+"Representative_Balls.cpp",IMPLEMENTATION,"implementation / simulation"
+"Reverse_Permutation.cpp",IMPLEMENTATION,"implementation / simulation"
+"Supermajority.cpp",IMPLEMENTATION,"implementation / simulation"
+"Survey_Tabulation.cpp",IMPLEMENTATION,"implementation / simulation"
+"Weird_Algorithm.cpp",IMPLEMENTATION,"implementation / simulation"
+"1_1.cpp",MISC,"miscellaneous or scratch solution"
+"456.cpp",MISC,"miscellaneous or scratch solution"
+"A.cpp",MISC,"miscellaneous or scratch solution"
+"A_AB_Balance.cpp",MISC,"miscellaneous or scratch solution"
+"A_AvtoBus.cpp",MISC,"miscellaneous or scratch solution"
+"A_Buttons.cpp",MISC,"miscellaneous or scratch solution"
+"A_Desorting.cpp",MISC,"miscellaneous or scratch solution"
+"A_Forked.cpp",MISC,"miscellaneous or scratch solution"
+"A_Helmets_in_Night_Light.cpp",MISC,"miscellaneous or scratch solution"
+"A_Make_it_White.cpp",MISC,"miscellaneous or scratch solution"
+"A_Make_It_Zero.cpp",MISC,"miscellaneous or scratch solution"
+"A_Strange_Partition.cpp",MISC,"miscellaneous or scratch solution"
+"A_Three_Indices.cpp",MISC,"miscellaneous or scratch solution"
+"A_Towers_of_Boxes.cpp",MISC,"miscellaneous or scratch solution"
+"A_United_We_Stand.cpp",MISC,"miscellaneous or scratch solution"
+"A_Walking_Master.cpp",MISC,"miscellaneous or scratch solution"
+"Appender.cpp",MISC,"miscellaneous or scratch solution"
+"Automat.cpp",MISC,"miscellaneous or scratch solution"
+"B_01_Game.cpp",MISC,"miscellaneous or scratch solution"
+"B_Bad_Boy.cpp",MISC,"miscellaneous or scratch solution"
+"B_Deja_Vu.cpp",MISC,"miscellaneous or scratch solution"
+"B_Eastern_Exhibition.cpp",MISC,"miscellaneous or scratch solution"
+"B_Fair_Numbers.cpp",MISC,"miscellaneous or scratch solution"
+"B_Flip_the_Bit_Easy_Version.cpp",MISC,"miscellaneous or scratch solution"
+"B_Maximum_Sum.cpp",MISC,"miscellaneous or scratch solution"
+"B_Monsters.cpp",MISC,"miscellaneous or scratch solution"
+"B_Multiply_by_2_divide_by_6.cpp",MISC,"miscellaneous or scratch solution"
+"B_Number_of_Smaller.cpp",MISC,"miscellaneous or scratch solution"
+"B_Odd_Grasshopper.cpp",MISC,"miscellaneous or scratch solution"
+"B_Ropes.cpp",MISC,"miscellaneous or scratch solution"
+"B_Sequence_Game.cpp",MISC,"miscellaneous or scratch solution"
+"B_Sum_of_Medians.cpp",MISC,"miscellaneous or scratch solution"
+"C_Che_city.cpp",MISC,"miscellaneous or scratch solution"
+"C_Grid_L.cpp",MISC,"miscellaneous or scratch solution"
+"C_Interesting_Sequence.cpp",MISC,"miscellaneous or scratch solution"
+"C_Pair_Selection.cpp",MISC,"miscellaneous or scratch solution"
+"C_Ski_Resort.cpp",MISC,"miscellaneous or scratch solution"
+"C_Test_Generator.cpp",MISC,"miscellaneous or scratch solution"
+"Chalkboard_Median.cpp",MISC,"miscellaneous or scratch solution"
+"Count_Adjacent_Cells.cpp",MISC,"miscellaneous or scratch solution"
+"D_505.cpp",MISC,"miscellaneous or scratch solution"
+"D_Deletive_Editing.cpp",MISC,"miscellaneous or scratch solution"
+"D_Maximum_Product_Strikes_Back.cpp",MISC,"miscellaneous or scratch solution"
+"D_Zhily_and_Barknights.cpp",MISC,"miscellaneous or scratch solution"
+"E_Equation.cpp",MISC,"miscellaneous or scratch solution"
+"E_liter.cpp",MISC,"miscellaneous or scratch solution"
+"E_Lomsat_gelral.cpp",MISC,"miscellaneous or scratch solution"
+"E_Segment_Sum.cpp",MISC,"miscellaneous or scratch solution"
+"E_Sending_a_Sequence_Over_the_Network.cpp",MISC,"miscellaneous or scratch solution"
+"F_Interesting_Function.cpp",MISC,"miscellaneous or scratch solution"
+"Fill_Rect_Query.cpp",MISC,"miscellaneous or scratch solution"
+"Frog_3.cpp",MISC,"miscellaneous or scratch solution"
+"G_Hits_Different.cpp",MISC,"miscellaneous or scratch solution"
+"main.cpp",MISC,"miscellaneous or scratch solution"
+"Mod_While_Positive.cpp",MISC,"miscellaneous or scratch solution"
+"Plumage_Palette.cpp",MISC,"miscellaneous or scratch solution"
+"Repeatedly_Repainting.cpp",MISC,"miscellaneous or scratch solution"
+"tempCodeRunnerFile.cpp",MISC,"miscellaneous or scratch solution"
+"A_Almost_Prime.cpp",NUMBER_THEORY,"number theory"
+"A_EhAb_AnD_gCd.cpp",NUMBER_THEORY,"number theory"
+"A_Exciting_Bets.cpp",NUMBER_THEORY,"number theory"
+"A_Maximum_GCD.cpp",NUMBER_THEORY,"number theory"
+"A_Modular_Exponentiation.cpp",NUMBER_THEORY,"number theory"
+"A_Noldbach_problem.cpp",NUMBER_THEORY,"number theory"
+"A_Odd_Divisor.cpp",NUMBER_THEORY,"number theory"
+"A_Orac_and_LCM.cpp",NUMBER_THEORY,"number theory"
+"A_Row_GCD.cpp",NUMBER_THEORY,"number theory"
+"A_Serval_and_Mocha_s_Array.cpp",NUMBER_THEORY,"number theory"
+"A_Three_Numbers_on_the_Blackboard.cpp",NUMBER_THEORY,"number theory"
+"Alphametic_Prime.cpp",NUMBER_THEORY,"number theory"
+"B_Difference_of_GCDs.cpp",NUMBER_THEORY,"number theory"
+"B_Different_Divisors.cpp",NUMBER_THEORY,"number theory"
+"B_Easy_Number_Challenge.cpp",NUMBER_THEORY,"number theory"
+"B_Longest_Divisors_Interval.cpp",NUMBER_THEORY,"number theory"
+"B_Lost_Numbers.cpp",NUMBER_THEORY,"number theory"
+"B_Make_It_Increasing.cpp",NUMBER_THEORY,"number theory"
+"B_Monsters.cpp",NUMBER_THEORY,"number theory"
+"B_Numbers_Box.cpp",NUMBER_THEORY,"number theory"
+"B_Permutation_Swap.cpp",NUMBER_THEORY,"number theory"
+"B_T_primes.cpp",NUMBER_THEORY,"number theory"
+"B_The_Number_of_Products.cpp",NUMBER_THEORY,"number theory"
+"B_Weakened_Common_Divisor.cpp",NUMBER_THEORY,"number theory"
+"C_Factorials_and_Powers_of_Two.cpp",NUMBER_THEORY,"number theory"
+"C_Grouping_Increases.cpp",NUMBER_THEORY,"number theory"
+"C_Hexadecimal_s_Numbers.cpp",NUMBER_THEORY,"number theory"
+"C_Modified_GCD.cpp",NUMBER_THEORY,"number theory"
+"C_Partitioning_the_Array.cpp",NUMBER_THEORY,"number theory"
+"C_Smilo_and_Monsters.cpp",NUMBER_THEORY,"number theory"
+"D_CGCDSSQ.cpp",NUMBER_THEORY,"number theory"
+"D_Count_GCD.cpp",NUMBER_THEORY,"number theory"
+"D_Divisibility_Game.cpp",NUMBER_THEORY,"number theory"
+"D_Storming_Arasaka.cpp",NUMBER_THEORY,"number theory"
+"D_The_67_th_OEIS_Problem.cpp",NUMBER_THEORY,"number theory"
+"D_Triangle_Coloring.cpp",NUMBER_THEORY,"number theory"
+"E_1_A_Prime_Flood_Easy_Version.cpp",NUMBER_THEORY,"number theory"
+"E_1_Divisible_Numbers_easy_version.cpp",NUMBER_THEORY,"number theory"
+"E_2_Divisible_Numbers_hard_version.cpp",NUMBER_THEORY,"number theory"
+"E_Add_Modulo_10.cpp",NUMBER_THEORY,"number theory"
+"G_1_Teleporters_Easy_Version.cpp",NUMBER_THEORY,"number theory"
+"L_Controllers.cpp",NUMBER_THEORY,"number theory"
+"Third_Largest_Number.cpp",NUMBER_THEORY,"number theory"
+"B_250_Thousand_Tons_of_TNT.cpp",PREFIX_SUM,"prefix sums"
+"B_Collecting_Game.cpp",PREFIX_SUM,"prefix sums"
+"D_Black_and_White_Stripe.cpp",PREFIX_SUM,"prefix sums"
+"D_Decidophobia.cpp",PREFIX_SUM,"prefix sums"
+"D_Odd_Queries.cpp",PREFIX_SUM,"prefix sums"
+"A_Lorenzo_Von_Matterhorn.cpp",SEGMENT_TREE,"segment tree / range query"
+"C_Monoblock.cpp",SEGMENT_TREE,"segment tree / range query"
+"D_Rorororobot.cpp",SEGMENT_TREE,"segment tree / range query"
+"F_Maximum_modulo_equality.cpp",SEGMENT_TREE,"segment tree / range query"
+"Range_Flip.cpp",SEGMENT_TREE,"segment tree / range query"
+"459.cpp",STRINGS,"string algorithms"
+"A_Balanced_Bitstring.cpp",STRINGS,"string algorithms"
+"A_Creating_Abbreviations.cpp",STRINGS,"string algorithms"
+"A_Don_t_Try_to_Count.cpp",STRINGS,"string algorithms"
+"A_Reverse_a_Substring.cpp",STRINGS,"string algorithms"
+"Adjacent_Distinct_String.cpp",STRINGS,"string algorithms"
+"B_1_Palindrome_Game_easy_version.cpp",STRINGS,"string algorithms"
+"B_A_Perfectly_Balanced_String.cpp",STRINGS,"string algorithms"
+"B_Beautiful_Numbers.cpp",STRINGS,"string algorithms"
+"B_Chemistry.cpp",STRINGS,"string algorithms"
+"B_Comparison_String.cpp",STRINGS,"string algorithms"
+"B_Digit_String.cpp",STRINGS,"string algorithms"
+"B_Irreducible_Anagrams.cpp",STRINGS,"string algorithms"
+"B_Make_it_Divisible_by_25.cpp",STRINGS,"string algorithms"
+"B_Palindrome_Twelve_and_Two_Terms.cpp",STRINGS,"string algorithms"
+"B_String_Problem.cpp",STRINGS,"string algorithms"
+"B_Swap_and_Delete.cpp",STRINGS,"string algorithms"
+"B_WOW_Factor.cpp",STRINGS,"string algorithms"
+"C_1_Cirno_and_Number_Easy_Version.cpp",STRINGS,"string algorithms"
+"C_1_Seating_Arrangement_Easy_Version.cpp",STRINGS,"string algorithms"
+"C_2_Seating_Arrangement_Hard_Version.cpp",STRINGS,"string algorithms"
+"C_Cost_of_a_Bracket_Sequence.cpp",STRINGS,"string algorithms"
+"C_Decreasing_String.cpp",STRINGS,"string algorithms"
+"C_Double_ended_Strings.cpp",STRINGS,"string algorithms"
+"C_Flexible_String.cpp",STRINGS,"string algorithms"
+"C_Fox_And_Names.cpp",STRINGS,"string algorithms"
+"C_Good_Subarrays.cpp",STRINGS,"string algorithms"
+"C_K_Complete_Word.cpp",STRINGS,"string algorithms"
+"C_Palindrome_Basis.cpp",STRINGS,"string algorithms"
+"C_Simple_Strings.cpp",STRINGS,"string algorithms"
+"C_Stands_for_Center.cpp",STRINGS,"string algorithms"
+"C_The_Fair_Nut_and_String.cpp",STRINGS,"string algorithms"
+"C_Zhily_and_Bracket_Swapping.cpp",STRINGS,"string algorithms"
+"Chompers.cpp",STRINGS,"string algorithms"
+"Count_Subgrid_Sum_K.cpp",STRINGS,"string algorithms"
+"D_Tandem_Repeats.cpp",STRINGS,"string algorithms"
+"D_Two_Digit_Strings.cpp",STRINGS,"string algorithms"
+"Decisive_Battle.cpp",STRINGS,"string algorithms"
+"E_1_Erase_and_Extend_Easy_Version.cpp",STRINGS,"string algorithms"
+"E_2_Three_Blocks_Palindrome_hard_version.cpp",STRINGS,"string algorithms"
+"E_Good_Triples.cpp",STRINGS,"string algorithms"
+"E_Pig_and_Palindromes.cpp",STRINGS,"string algorithms"
+"Endless_Holidays.cpp",STRINGS,"string algorithms"
+"F_Graph_Without_Long_Directed_Paths.cpp",STRINGS,"string algorithms"
+"F_Shifting_String.cpp",STRINGS,"string algorithms"
+"Hell_World.cpp",STRINGS,"string algorithms"
+"Not_Adjacent_2.cpp",STRINGS,"string algorithms"
+"Secret_Numbers.cpp",STRINGS,"string algorithms"
+"Wild_Card.cpp",STRINGS,"string algorithms"
+"A_Copil_Copac_Draws_Trees.cpp",TREES,"tree algorithms"
+"A_Iris_and_Game_on_the_Tree.cpp",TREES,"tree algorithms"
+"A_Linova_and_the_Kingdom.cpp",TREES,"tree algorithms"
+"A_Parsa_s_Humongous_Tree.cpp",TREES,"tree algorithms"
+"B_Appleman_and_Tree.cpp",TREES,"tree algorithms"
+"B_Fish_Graph.cpp",TREES,"tree algorithms"
+"B_Minimum_Average_Path.cpp",TREES,"tree algorithms"
+"B_Numbers_on_Tree.cpp",TREES,"tree algorithms"
+"B_Password.cpp",TREES,"tree algorithms"
+"C_Alyona_and_the_Tree.cpp",TREES,"tree algorithms"
+"C_Coloring_Trees.cpp",TREES,"tree algorithms"
+"C_Cut_em_all.cpp",TREES,"tree algorithms"
+"C_Edgy_Trees.cpp",TREES,"tree algorithms"
+"C_Kefa_and_Park.cpp",TREES,"tree algorithms"
+"C_Tree_Pruning.cpp",TREES,"tree algorithms"
+"C_Village_Guilds.cpp",TREES,"tree algorithms"
+"D_Children_Holiday.cpp",TREES,"tree algorithms"
+"D_Choosing_Capital_for_Treeland.cpp",TREES,"tree algorithms"
+"D_Christmas_Trees.cpp",TREES,"tree algorithms"
+"D_Distance_in_Tree.cpp",TREES,"tree algorithms"
+"D_Minimum_maximum_on_the_Path.cpp",TREES,"tree algorithms"
+"D_Penchick_and_Desert_Rabbit.cpp",TREES,"tree algorithms"
+"D_Reset_K_Edges.cpp",TREES,"tree algorithms"
+"D_Score_of_a_Tree.cpp",TREES,"tree algorithms"
+"D_The_Number_of_Imposters.cpp",TREES,"tree algorithms"
+"D_Water_Tree.cpp",TREES,"tree algorithms"
+"E_Anton_and_Tree.cpp",TREES,"tree algorithms"
+"E_Danil_and_a_Part_time_Job.cpp",TREES,"tree algorithms"
+"E_Fairy.cpp",TREES,"tree algorithms"
+"E_New_Year_Tree.cpp",TREES,"tree algorithms"
+"E_Round_Dance.cpp",TREES,"tree algorithms"
+"E_Xenia_and_Tree.cpp",TREES,"tree algorithms"
+"F_Maximum_White_Subtree.cpp",TREES,"tree algorithms"
+"F_Simple_Cycles_Edges.cpp",TREES,"tree algorithms"
+"F_Tourist_Reform.cpp",TREES,"tree algorithms"
+"F_Tree_with_Maximum_Cost.cpp",TREES,"tree algorithms"
+"G_Josephus_Problem_2.cpp",TREES,"tree algorithms"
+"G_White_Black_Balanced_Subtrees.cpp",TREES,"tree algorithms"
+"A_Looped_Playlist.cpp",TWO_POINTERS,"two pointers / sliding window"
+"A_Maximum_Average_Segment.cpp",TWO_POINTERS,"two pointers / sliding window"
+"A_Pride.cpp",TWO_POINTERS,"two pointers / sliding window"
+"A_Segment_with_Small_Sum.cpp",TWO_POINTERS,"two pointers / sliding window"
+"B_Basketball_Together.cpp",TWO_POINTERS,"two pointers / sliding window"
+"B_Segment_with_Big_Sum.cpp",TWO_POINTERS,"two pointers / sliding window"
+"B_Total_Length.cpp",TWO_POINTERS,"two pointers / sliding window"
+"C_Equal_Frequencies.cpp",TWO_POINTERS,"two pointers / sliding window"
+"C_Number_of_Segments_with_Small_Sum.cpp",TWO_POINTERS,"two pointers / sliding window"
+"C_The_67_th_Permutation_Problem.cpp",TWO_POINTERS,"two pointers / sliding window"
+"D_Number_of_Segments_with_Big_Sum.cpp",TWO_POINTERS,"two pointers / sliding window"
+"D_Small_GCD.cpp",TWO_POINTERS,"two pointers / sliding window"
+"D_Stylish_clothes.cpp",TWO_POINTERS,"two pointers / sliding window"
+"E_Advertising_Agency.cpp",TWO_POINTERS,"two pointers / sliding window"
+"E_Knapsack_on_a_Segment.cpp",TWO_POINTERS,"two pointers / sliding window"
+"E_Segments_with_Small_Set.cpp",TWO_POINTERS,"two pointers / sliding window"
+"F_Card_Substrings.cpp",TWO_POINTERS,"two pointers / sliding window"
+"F_Segments_with_Small_Spread.cpp",TWO_POINTERS,"two pointers / sliding window"
+"G_Coprime_Segment.cpp",TWO_POINTERS,"two pointers / sliding window"
+"G_Not_Very_Rude_Substring.cpp",TWO_POINTERS,"two pointers / sliding window"
+"I_Segment_with_the_Required_Subset.cpp",TWO_POINTERS,"two pointers / sliding window"
+"Not_Adjacent.cpp",TWO_POINTERS,"two pointers / sliding window"

@@ -49,38 +49,58 @@ static const auto fastio = []() {
 ==========================
 */
 
-int cnt[1000001];
-
 void solve() {
-  int n;
-  cin >> n;
+  int n, m, k;
+  cin >> n >> m >> k;
 
-  int a[n];
+  vll c(n);
+  rv(c);
 
-  for (int i = 0; i < n; i++) {
-    cin >> a[i];
-    cnt[a[i]]++;
+  vector<vector<ll>> bonus(n, vector<ll>(n, 0));
+
+  for (int i = 0; i < k; i++) {
+    int x, y;
+    ll c;
+    cin >> x >> y >> c;
+
+    --x;
+    --y;
+
+    bonus[x][y] = c;
   }
+
+  // -1 means unreachable state
+  vvll dp(1 << n, vll(n, -1));
 
   ll ans = 0;
 
-  for (int i = 0; i < n; i++) {
-        // For b == 1
-    ans += ll(cnt[a[i]] - 1) * (cnt[a[i]] - 2);
+  for (int i = 0; i < n; i++) dp[1 << i][i] = c[i];
 
-    for (int b = 2; (ll)a[i] * b * b <= 1000000ll; b++) {
-      ans += ll(cnt[a[i] * b]) * cnt[a[i] * b * b];
+  for (int mask = 0; mask < (1 << n); mask++) {
+    for (int last = 0; last < n; last++) {
+      if (dp[mask][last] == -1) continue;
+
+      for (int nxt = 0; nxt < n; nxt++) {
+        if (mask & (1 << nxt)) continue;
+
+        int newMask = mask | (1 << nxt);
+
+        // Satisfaction from eating the dish itself: a[nxt]
+        // Extra bonus from the adjacent pair: bonus[last][nxt]
+        dp[newMask][nxt] =
+            max(dp[newMask][nxt], dp[mask][last] + bonus[last][nxt] + c[nxt]);
+      }
+
+      if (__builtin_popcount(mask) == m)
+        ans = max(ans, dp[mask][last]);
     }
   }
-
-  for (int i = 0; i < n; i++) cnt[a[i]]--;
 
   cout << ans << endl;
 }
 
 int main() {
   int t = 1;
-  cin >> t;
 
   while (t--) {
     solve();
